@@ -78,10 +78,12 @@ background-color:#6667ab
 }
 
 #descuentos{
-    width:100%;
+    width:50%;
     color:rgb(116, 211, 211);
     text-align: center;
+    justify-content: center;
     font-size:1.3vw;
+    margin-left: 20vw;
 }
 #diy{
     display: flex;
@@ -110,6 +112,10 @@ font-size: 2vw;
     display: flex;
     justify-content: center;
     width:100%;
+}
+#opinion{
+    width:60vw;
+
 }
 #detalles{
     display: flex;
@@ -182,3 +188,33 @@ footer img{
     display:flex;
     justify-content: right;
 }
+
+@media (max-width: 600px) {
+main{
+    display:flex;
+    flex-direction: column;
+}
+
+#tcabecera{
+    margin-left: -4vw;
+    width:50%;
+    font-size: 3vw;
+    text-align: left;
+}
+
+#camis{
+    order: -1;
+}
+#formulario{
+    flex-direction: column;
+    align-items: center;
+}
+#diy{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cdiy{
+    margin-left:0vw;
+    }
+  }
