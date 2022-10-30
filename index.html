@@ -31,43 +31,47 @@
     <div id="fgancho">
         <p>¡UNETE A NUESTRO MULTIVERSO!</p>
     </div>
-
-    <div id="formulario">
+    <div id="posicion">
+        <div id="formulario">
+            
+        <form id="form" action="" method="post" >
+        <p id="identidad">Tranquil@ no revelaremos tu identidad.</p>      
+            <p id="obligatorio">*Campos obligatorios</p>
+            <div id="np">
+            <label for="nombre" ></label>
+            <input type="text" id="nombre" placeholder="Nombre*" size="30" required> 
         
-     <form id="form" action="" method="post" >
-       <p id="identidad">Tranquil@ no revelaremos tu identidad.</p>      
-        <p id="obligatorio">*Campos obligatorios</p>
-           <label for="nombre" ></label>
-           <input type="text" id="nombre" placeholder="Nombre*" size="30" required> 
-       
-         
-            <label for="apellidos" name="apellidos" alt="apellidos"></label> 
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" required>
-        
-       <p>
-         <label for="mail"></label>
-         <input type="email" id="mail" placeholder="E-mail*" required>
-       
-        
-                <label for="fecha">Cumpleaños</label>
-                <input type="date" id="fecha">
-        </p>
-        <p> <label for="sexo">¿Cómo te defines?</label></br>
-                <input type="radio" id="sexo" name="boton" value="mujer"> Superheroina<br>
-                <input type="radio" id="sexo" name="boton" value="hombre"> Superhéroe
-        </p>
-        <input id="boton" type="submit" value="JOIN!"> 
-         
+            
+                <label for="apellidos" name="apellidos" alt="apellidos"></label> 
+                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" required>
+            
+            </div>
+            <div id="email">
+            <label for="mail"></label>
+            <input type="email" id="mail" placeholder="E-mail*" required>
+            </div>
+            <div id="date">
+                <div id="contenidos">
+                    <label for="fecha">Cumpleaños</label>
+                    <input type="date" id="fecha">
+                </div>
+                <p id="opcionsexo"> <label for="sexo" id="tsexo">¿Cómo te defines?</label></br>
+                    <input type="radio" id="sexo" name="boton" value="mujer"> Superheroina<br>
+                    <input type="radio" id="sexo" name="boton" value="hombre"> Superhéroe<br>
+                    <input type="radio" id="sexo" name="boton" value="otro"> Prefiero no decirlo
+            </p>
+                </div>
 
-    </form>
+            <input id="boton" type="submit" value="JOIN!"> 
+            
 
-
+        </form>
+        </div>
         <div id="camis">
             <img id="camisetas" src="imagenes/camisetas.png" alt="camisetas">
 
         </div>
     </div>
-
     <div id="descuentos">
         <p>Al unirte a nosotros accederas a descuentos especiales por tu cumpleaños
             y seras el primero en enterarse de nuestras promociones especiales y
