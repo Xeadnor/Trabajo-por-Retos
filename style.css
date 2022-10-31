@@ -63,7 +63,7 @@ main{
     display: flex;
     justify-content: center;
     width: 100%;
-    color:rgb(204, 204, 56);
+    color:rgb(230, 230, 60);
     font-family: 'PermanentMarker';
 }
 #fgancho p{
@@ -88,21 +88,21 @@ main{
     width:100%;
 }
 #nombre{
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'PermanentMarker';
     margin-left:9.6vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(253, 253, 121);
+    background-color:rgb(230, 230, 60);
     text-align: center;
     font-size: 1.4vw;
 }
 #apellidos{
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'PermanentMarker';
     margin-left: -10vw;  
     margin-right: 12vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(253, 253, 121);
+    background-color:rgb(230, 230, 60);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -114,11 +114,11 @@ main{
     margin-top:0.5vw;
 }
 #mail{
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'PermanentMarker';
     margin-left:5vw;
     width:30vw;
     height:3vw;
-    background-color:rgb(253, 253, 121);
+    background-color:rgb(230, 230, 60);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -126,16 +126,17 @@ main{
     width:100%;
     display: flex;
     justify-content: center;
+    
 }
 #contenidos{
     margin-top:0.5vw;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    background-color:rgb(253, 253, 121);
+    font-family: 'PermanentMarker';
+    background-color:rgb(230, 230, 60);
     display:flex;
     justify-content: center;
     flex-direction: column;
     font-size: 1.4vw;
-    height: 3vw;
+    height: 6vw;
     color:gray;
     width:12.3vw;
     text-align: center;
@@ -143,7 +144,7 @@ main{
     border: 2px solid;
 }
 #fecha{
-    background-color:rgb(253, 253, 121);
+    background-color:rgb(230, 230, 60);
     color:gray;
     font-size: 1.4vw;
     font-weight: thin;
@@ -153,7 +154,7 @@ main{
     font-size: 1.4vw;
 }
 #sexo{
-    background:rgb(253, 253, 121);
+    background:rgb(230, 230, 60);
     width:1vw;
     height: 1vw;
     font-size: 2vw;
@@ -163,13 +164,14 @@ main{
     font-size: 1.8vw;
     text-align: center;
     height: 1vw;
+    font-family: 'PermanentMarker';
 }
 #opcionsexo{
     margin-top:0.5vw;
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'PermanentMarker';
     font-size:1.4vw;
     align-items: center;
-    margin-left: 5vw;
+    margin-left: 2.5vw;
     
 }
 #obligatorio{
@@ -177,10 +179,11 @@ main{
     font-size: 1.8vw;
     text-align: center;
     height: 1vw;
+    font-family: 'PermanentMarker';
 }
 
 #boton{
-    background-color:rgb(204, 204, 56);
+    background-color:rgb(230, 230, 60);
     border: none;
     color: black;
     margin-left: 4vw;
@@ -279,6 +282,7 @@ footer p{
     width: 40%;
     margin-right: 5vw;
     font-size: 1.7vw;
+    font-family: 'Orbitron';
 }
 #RRSS{
     display:flex;
@@ -407,7 +411,7 @@ font-size:4vw;
 #contenidos{
 
     width:25vw;
-    height: 8vw;
+    height: 19vw;
     font-size:4vw;
     margin-top:2.5vw;
     margin-left:9.5vw;
