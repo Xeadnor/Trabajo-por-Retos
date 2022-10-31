@@ -149,7 +149,11 @@ main{
     font-size: 1.4vw;
     font-weight: thin;
     border:0;
+
 }
+input{
+    -webkit-appearance: none;
+ }
 #tsexo{
     font-size: 1.4vw;
 }
