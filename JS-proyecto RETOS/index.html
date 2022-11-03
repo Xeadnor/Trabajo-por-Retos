@@ -53,17 +53,17 @@
                 <label for="fecha">Cumpleaños</label>
                 <input type="date" id="fecha">
             </p>
-            <p>
+            
+            <div id="direccion"></div><p>
            <label for="direccion">Dirección:</label></br>
-           <textarea id="direccion" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
-           <textarea id="direccion" name="direccion2" placeholder="Bloque, apartamento,piso, portal..."></textarea></br>
-           <textarea id="direccion" name="direccion3" placeholder="Población"></textarea>
-           <input type="number" id="direccion" name="apellidos" placeholder="Código Postal" ></br>
-
-         </p>
+           <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
+           <textarea id="direccion2" name="direccion2" placeholder="Bloque, apartamento,piso, portal..."></textarea></br>
+           <textarea id="direccion3" name="direccion3" placeholder="Población"></textarea>
+           <input type="number" id="direccion4" name="apellidos" placeholder="Código Postal" ></br>
+         </p></div>
         
         <p>
-            <select name="pais">
+            <select id="pais" name="pais">
                 <option value="Ninguno">--Seleccione el país--</option>
                 <option value="Afganistán">Afganistán</option>
                 <option value="Albania">Albania</option>
@@ -300,10 +300,11 @@
                     <option value="21"> 2027</option>
                 </select>
             </div>
-            <div class="form-group" id="credit_cards"> <!-- añadir selección de tipo de tarjeta con radio button-->
-                <img src="assets/images/visa.jpg" id="visa">
-                <img src="assets/images/mastercard.jpg" id="mastercard">
-                <img src="assets/images/amex.jpg" id="amex">
+            <div class="form-group" id="credit_cards"> 
+             
+                <input type="radio" id="card" name="boton" value="visa">  <img src="visa.png" id="visa">
+                <input type="radio" id="card" name="boton" value="mastercard">  <img src="mastercard.png" id="mastercard">
+                <input type="radio" id="card" name="boton" value="amex"> <img src="amex.png" id="amex">
             </div>
         </p>
         <p> 

@@ -1,4 +1,3 @@
-
 const form = document.getElementById("formulario");
 form.addEventListener("submit", validar);
 
@@ -6,6 +5,12 @@ const nombre = document.getElementById("nombre");
 const apellidos = document.getElementById("apellidos");
 const psw1 = document.getElementById("contrasena1");
 const psw2 = document.getElementById("contrasena2");
+const pais= document.getElementById("pais");
+const dir1= document.getElementById("direccion1");
+const dir2= document.getElementById("direccion2");
+const dir3= document.getElementById("direccion3");
+const dir4= document.getElementById("direccion4");
+
 
 function validar(){
 
@@ -93,6 +98,18 @@ function comprobarContrasenna(psw1, psw2){
         
     }
 return false;
-
-
 }
+
+function comprobarDirPais{
+    if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0){
+        if(pais.value!=nulo){
+            return true;
+        }
+    }
+    //probar a comprobar mediante evento de teclado
+
+   return false;
+}
+
+
+    
