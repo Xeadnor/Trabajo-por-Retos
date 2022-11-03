@@ -84,12 +84,11 @@ main{
 }
 #np{
     display:flex;
-    justify-content: space-between;
     width:100%;
 }
 #nombre{
     font-family: 'PermanentMarker';
-    margin-left:9.6vw;
+    margin-left:16.5vw;
     width:12.3vw;
     height: 3vw;
     background-color:rgb(230, 230, 60);
@@ -98,8 +97,7 @@ main{
 }
 #apellidos{
     font-family: 'PermanentMarker';
-    margin-left: -10vw;  
-    margin-right: 12vw;
+    margin-left:4.7vw;
     width:12.3vw;
     height: 3vw;
     background-color:rgb(230, 230, 60);
@@ -109,13 +107,11 @@ main{
 #email{
     display:flex;
     width: 100%;
-    justify-content: center;
-    font-size: 1.4vw;
     margin-top:0.5vw;
 }
 #mail{
     font-family: 'PermanentMarker';
-    margin-left:5vw;
+    margin-left:16.5vw;
     width:30vw;
     height:3vw;
     background-color:rgb(230, 230, 60);
@@ -125,7 +121,6 @@ main{
 #date{
     width:100%;
     display: flex;
-    justify-content: center;
     
 }
 #contenidos{
@@ -140,8 +135,8 @@ main{
     color:gray;
     width:12.3vw;
     text-align: center;
-    margin-left: 5.3vw;
-    border: 2px solid;
+    margin-left: 16.5vw;
+    border: 1px solid;
 }
 #fecha{
     background-color:rgb(230, 230, 60);
@@ -182,12 +177,82 @@ main{
     height: 1vw;
     font-family: 'PermanentMarker';
 }
+#contra{
+    display:flex;
+    width: 100%;
+    
+}
+
+
+#contrasena1{
+    font-family: 'PermanentMarker';
+    margin-left:16.5vw;
+    width:14.5vw;
+    height: 3vw;
+    background-color:rgb(230, 230, 60);
+    text-align: center;
+    font-size: 1.4vw;
+}
+#contrasena2{
+    font-family: 'PermanentMarker';
+    margin-left: 0.3vw;
+    width:14.5vw;
+    height: 3vw;
+    background-color:rgb(230, 230, 60);
+    text-align: center;
+    font-size: 1.4vw;
+}
+#direccion1, #direccion2,  #direccion3{
+    font-family: 'PermanentMarker';
+    margin-left: 16.5vw;
+    margin-top:1vw;
+    width:30vw;
+    height: 3vw;
+    background-color:rgb(230, 230, 60);
+    text-align: center;
+    font-size: 1.4vw;
+}
+#direccion4{
+    font-family: 'PermanentMarker';
+    margin-left:16.5vw;
+    margin-top:1vw;
+    width:12.3vw;
+    height: 3vw;
+    background-color:rgb(230, 230, 60);
+    text-align: center;
+    font-size: 1.4vw;
+    color:gray;
+}
+
+#pais{
+    font-family: 'PermanentMarker';
+    margin-top:1.1vw;
+    margin-left:1.7vw;
+    width:16vw;
+    background-color:rgb(230, 230, 60);
+    height: 3.3vw;
+    text-align: center;
+    font-size: 1.2vw;
+}
+#adress{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+#adress2{
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+}
 
 #boton{
     background-color:rgb(230, 230, 60);
     border: none;
     color: black;
     margin-left: 4vw;
+    margin-top: 1vw;
     text-align: center;
     text-decoration: solid;
     font-family: 'PermanentMarker';
