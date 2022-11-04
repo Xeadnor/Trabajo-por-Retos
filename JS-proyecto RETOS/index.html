@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
  
@@ -32,18 +33,19 @@
         <ul>
          <p>
            <label for="nombre" ></label>
-           <input type="text" id="nombre" placeholder="Nombre*" required> 
+           <input type="text" id="nombre" placeholder="Nombre*"> 
+          
          </p>
          <p>
             <label for="apellidos" name="apellidos" alt="apellidos"></label> <!-- comprobar cómo poner un texto alternativo para accesibilidad-->
-            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" required>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" >
           </p>
          <p>
            <label for="mail"></label>
-           <input type="email" id="mail" placeholder="E-mail*" required>
+           <input type="email" id="mail" placeholder="E-mail*" >
          </p>
-         Contraseña: <br><input id="contrasena1" type="password" name="password" placeholder="Contraseña*" minlength="6" required></br>
-        <input id="contrasena2" type="password" name="password" placeholder="Confirmación de contraseña*" minlength="6" required></p>
+         Contraseña: <br><input id="contrasena1" type="password" name="password" placeholder="Contraseña*" minlength="6"></br>
+        <input id="contrasena2" type="password" name="password" placeholder="Confirmación de contraseña*" minlength="6"></p>
  
             <p> <label for="sexo">¿Cómo te defines?</label></br>
                 <input type="radio" id="sexo" name="boton" value="mujer"> Superheroina<br>
@@ -51,7 +53,7 @@
             </p>
             <p>
                 <label for="fecha">Cumpleaños</label>
-                <input type="date" id="fecha">
+                <input type="date" id="fecha" >
             </p>
             
             <div id="direccion"></div><p>
@@ -261,7 +263,7 @@
                 <option value="Zimbabue">Zimbabue</option>
             </select>
         </p>    
-        <p>
+        <div id="tarjeta">
             <h4>Datos de tarjeta</h4>
             <div class="form-group owner">
                 <label for="owner">Propietario</label>
@@ -306,14 +308,14 @@
                 <input type="radio" id="card" name="boton" value="mastercard">  <img src="mastercard.png" id="mastercard">
                 <input type="radio" id="card" name="boton" value="amex"> <img src="amex.png" id="amex">
             </div>
-        </p>
+        </div>
         <p> 
             <input type="checkbox" id="notificaciones">Activar notificaciones de la pagina.
         </p>
         <p>
             <input type="checkbox" id="newsletter">Deseo recibir la newsletter semanal con las novedades de la página.
         </p>
-         <input type="submit" value="Enviar"> <!-- asegurarse de que el botón sea accesible-->
+         <input type="submit" value="Enviar" > <!-- asegurarse de que el botón sea accesible-->
          
         </ul>
        </form>

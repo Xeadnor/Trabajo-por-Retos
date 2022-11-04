@@ -1,6 +1,7 @@
 const form = document.getElementById("formulario");
+const boton = document.getElementById("boton")
 form.addEventListener("submit", validar);
-
+const tarjeta = document.getElementById("tarjeta");
 const nombre = document.getElementById("nombre");
 const apellidos = document.getElementById("apellidos");
 const psw1 = document.getElementById("contrasena1");
@@ -10,29 +11,51 @@ const dir1= document.getElementById("direccion1");
 const dir2= document.getElementById("direccion2");
 const dir3= document.getElementById("direccion3");
 const dir4= document.getElementById("direccion4");
+const mail = document.getElementById("mail");
+const fecha = document.getElementById("fecha");
+dir1.addEventListener("keydown",comprobarDirPais);
+dir2.addEventListener("keydown",comprobarDirPais);
+dir3.addEventListener("keydown",comprobarDirPais);
+dir4.addEventListener("keydown",comprobarDirPais);
+pais.addEventListener("click",comprobarDirPais);
 
 
-function validar(){
+function validar(e){
+    e.preventDefault()
 
-
-if(!comprobarNombre(nombre)){
-    alert("El nombre no puede tener más de 2 palabras");
-}
-if(!comprobarApellido(apellidos)){
-    alert("El apellido no puede tener más de 2 palabras");
-}
-
-if(comprobarNombre(nombre)&&comprobarApellido(apellidos)&& comprobarContrasenna(psw1, psw2)){
+if(comprobarNombre(nombre)&&comprobarApellido(apellidos)&& comprobarContrasenna(psw1, psw2)&&comprobarMail(mail)
+&&comprobarFecha(fecha.value)){
     alert("Se ha enviado el formulario");
     return true;
 }
   return false;
 }
 
+function comprobarFecha(fecha) {
+   var fHoy = new Date();
+   var f = new Date(fecha)
+   fHoy.setFullYear;
+   fHoy.setMonth;
+   fHoy.setDate;
+   console.log(fHoy);
+   console.log(f);
+
+   if((fHoy - f) > 568025136000 ){
+    return true;
+   }else{
+    alert("Debes tener almenos 18 años")
+    return false;
+   }
+    
+}
 function comprobarNombre(nombre){
     let nom= nombre.value;
     let sinEspacios= nom.trim();
      let cont=0;
+     if(nom.length == 0){
+        alert("El nombre es un campo obligatorio")
+        return false;
+    }
     for (let i = 0; i < sinEspacios.length; i++) {
         const element = sinEspacios[i];
       
@@ -43,14 +66,21 @@ function comprobarNombre(nombre){
     
     if (cont<=1){
         return true;
+    }else{
+        alert("El nombre no puede tener más de 2 palabras");
+        return false;
     }
-    return false;
+
 }
 
 function comprobarApellido(apellidos){
     let ap= apellidos.value;
     let sinEspacios= ap.trim();
     let cont=0;
+    if(ap.length == 0){
+        alert("El apellido es un campo obligatorio")
+        return false;
+    }
     for (let i = 0; i < sinEspacios.length; i++) {
         const element = sinEspacios[i];
       
@@ -62,9 +92,29 @@ function comprobarApellido(apellidos){
     
     if (cont<=1){
         return true;
+    }else{
+        alert("El apellido no puede tener más de 2 palabras");
+        return false;
+        
     }
-    return false;
+   
 
+}
+
+function comprobarMail(mail) {
+    ///.*@.*\.*/gm
+    const email = new RegExp(/[a-z0-9_\-.]+[@]+[a-z]+\.[a-z]*/);
+    if(mail.value.length == 0){
+        alert("El mail es un campo obligatorio")
+        return false;
+    }
+    if(email.test(mail.value)){
+        return true;
+    }else{
+        alert("No es un email válido")
+        return false;
+    }
+    
 }
 
 function comprobarContrasenna(psw1, psw2){
@@ -100,16 +150,18 @@ function comprobarContrasenna(psw1, psw2){
 return false;
 }
 
-function comprobarDirPais{
+function comprobarDirPais(){
     if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0){
-        if(pais.value!=nulo){
+        if(pais.value!="Ninguno"){
+            tarjeta.style.display="inline";
             return true;
         }
     }
-    //probar a comprobar mediante evento de teclado
+
+    const eRd1= new RegExp();
+    const eRd3= new RegExp();
 
    return false;
 }
 
 
-    
