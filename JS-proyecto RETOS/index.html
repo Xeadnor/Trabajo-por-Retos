@@ -10,7 +10,7 @@
 <body>
  
       <!-- TO DO:
-       + Comprobar de nuevo que comprueba si el nombre y el apellido tienen sólo 2 palabras
+      
        + Conseguir que los datos de tarjeta sólo se muestren cuando se introduzcan 
          los campos de Dirección y país al completo
        + Cambiar los alert por elementos innerHTML que si la contraseña no cuple alguno de los 
@@ -32,21 +32,24 @@
         <p>*Campos obligatorios</p>
         <ul>
          <p>
-           <label for="nombre" ></label>
+           <label for="nombre" hidden>Nombre</label>
            <input type="text" id="nombre" placeholder="Nombre*"> 
-          
+          <p id="resultNombre"></p>
          </p>
          <p>
-            <label for="apellidos" name="apellidos" alt="apellidos"></label> <!-- comprobar cómo poner un texto alternativo para accesibilidad-->
+            <label for="apellidos" name="apellidos" alt="apellidos" hidden>Apellidos</label> 
             <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" >
+            <p id="resultApellidos"></p>
           </p>
          <p>
-           <label for="mail"></label>
+           <label for="mail" hidden>E-mail</label>
            <input type="email" id="mail" placeholder="E-mail*" >
+           <p id="resultMail"></p>
          </p>
-         Contraseña: <br><input id="contrasena1" type="password" name="password" placeholder="Contraseña*" minlength="6"></br>
+         <label for="contrasena1"> Contraseña:</label>
+        <br><input id="contrasena1" type="password" name="password" placeholder="Contraseña*" minlength="6"></br>
         <input id="contrasena2" type="password" name="password" placeholder="Confirmación de contraseña*" minlength="6"></p>
- 
+        <p id="resultCont"></p>
             <p> <label for="sexo">¿Cómo te defines?</label></br>
                 <input type="radio" id="sexo" name="boton" value="mujer"> Superheroina<br>
                 <input type="radio" id="sexo" name="boton" value="hombre"> Superhéroe
@@ -56,13 +59,13 @@
                 <input type="date" id="fecha" >
             </p>
             
-            <div id="direccion"></div><p>
-           <label for="direccion">Dirección:</label></br>
-           <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
-           <textarea id="direccion2" name="direccion2" placeholder="Bloque, apartamento,piso, portal..."></textarea></br>
-           <textarea id="direccion3" name="direccion3" placeholder="Población"></textarea>
-           <input type="number" id="direccion4" name="apellidos" placeholder="Código Postal" ></br>
-         </p></div>
+            <div id="direccion"></div>
+                <label for="direccion">Dirección:</label></br>
+                <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
+                <textarea id="direccion2" name="direccion2" placeholder="Bloque, apartamento,piso, portal..."></textarea></br>
+                <textarea id="direccion3" name="direccion3" placeholder="Población"></textarea>
+                <input type="number" id="direccion4" name="apellidos" placeholder="Código Postal" ></br>
+            </div>
         
         <p>
             <select id="pais" name="pais">
@@ -304,9 +307,9 @@
             </div>
             <div class="form-group" id="credit_cards"> 
              
-                <input type="radio" id="card" name="boton" value="visa">  <img src="visa.png" id="visa">
-                <input type="radio" id="card" name="boton" value="mastercard">  <img src="mastercard.png" id="mastercard">
-                <input type="radio" id="card" name="boton" value="amex"> <img src="amex.png" id="amex">
+                <input type="radio" id="card" name="boton" value="visa">  <img src="img/visa.png" id="visa">
+                <input type="radio" id="card" name="boton" value="mastercard">  <img src="img/mastercard.png" id="mastercard">
+                <input type="radio" id="card" name="boton" value="amex"> <img src="img/amex.png" id="amex">
             </div>
         </div>
         <p> 
