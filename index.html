@@ -38,16 +38,16 @@
         <p id="identidad">Tranquil@ no revelaremos tu identidad</p>      
             <p id="obligatorio">*Campos obligatorios</p>
             <div id="np">
-            <label for="nombre" ></label>
+            <label for="nombre" hidden>Nombre</label>
             <input type="text" id="nombre" placeholder="Nombre*" size="30" required> 
         
             
-                <label for="apellidos" name="apellidos" alt="apellidos"></label> 
+                <label for="apellidos" name="apellidos" alt="apellidos" hidden>Apellido</label> 
                 <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" required>
             
             </div>
             <div id="email">
-            <label for="mail"></label>
+            <label for="mail" hidden> mail</label>
             <input type="email" id="mail" placeholder="E-mail*" required>
             </div>
             <div id="date">
@@ -62,18 +62,24 @@
             </p>
                 </div>
                 <div id="contra">
+                    <label for="contrasena1" hidden>Contraseña</label>
                     <input id="contrasena1" type="password" name="password" placeholder="Contraseña*" required>
+                    <label for="contrasena2" hidden>Repetir contraseña</label>
                     <input id="contrasena2" type="password" name="password" placeholder="Repetir Contraseña*" required>
                 </div>
 
                 <div id="adress">
+                    <label for="direccion1" hidden>Direccion de la calle/via</label>
                     <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
-                    <textarea id="direccion2" name="direccion2" placeholder="Bloque, apartamento,piso, portal..."></textarea></br>
+                    <label for="direccion2" hidden>Bloque,piso, portal...</label>
+                    <textarea id="direccion2" name="direccion2" placeholder="Bloque,piso, portal..."></textarea></br>
+                    <label for="direccion3" hidden>Población</label>
                     <textarea id="direccion3" name="direccion3" placeholder="Población"></textarea>
                      <div id="adress2">
-                     <input type="number" id="direccion4" name="apellidos" placeholder="Código Postal" > 
+                    <label for="direccion4" hidden>Codigo Postal</label>  
+                     <input type="number" id="direccion4" name="cp" placeholder="Código Postal" > 
                     <select name="pais" id="pais">
-                        <option value="Ninguno">-Seleccione el país-</option>
+                        <option value="Ninguno">Seleccione el país</option>
                         <option value="Afganistán">Afganistán</option>
                         <option value="Albania">Albania</option>
                         <option value="Alemania">Alemania</option>
@@ -271,6 +277,70 @@
                     </select>
                 </div>
                 </div>
+
+                <div id="tarjeta">
+                    <h2 id="h2t">Datos de tarjeta</h2>
+                    
+                        <label for="owner" hidden>Propietario</label>
+                        <input type="text" class="form-control" id="owner" placeholder="Propietario">
+                  
+                    
+                        <label for="cvv" hidden>CVV</label>
+                        <input type="number" class="form-control" id="cvv" placeholder="CVV">
+                    
+                   
+                        <label for="cardNumber" hidden>Número de tarjeta</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="Numero de tarjeta">
+                   
+                        <p id="lt">Fecha de caducidad</p>
+                        <div id="fCaducidad">
+                        <label for="mesCaducidad" hidden>Mes de caducidad</label>
+                        <select id="mesCaducidad">
+                            <option value="0">Enero</option>
+                            <option value="1">Febrero </option>
+                            <option value="2">Marzo</option>
+                            <option value="3">Abril</option>
+                            <option value="4">Mayo</option>
+                            <option value="5">Junio</option>
+                            <option value="6">Julio</option>
+                            <option value="7">Agosto</option>
+                            <option value="8">Septiembre</option>
+                            <option value="9">Octubre</option>
+                            <option value="10">Noviembre</option>
+                            <option value="11">Diciembre</option>
+                        </select>
+                        <label for="ayoCaducidad" hidden>Año de caducidad</label>
+                        <select id="ayoCaducidad">
+                            <option value="22"> 2022</option>
+                            <option value="23"> 2023</option>
+                            <option value="24"> 2024</option>
+                            <option value="25"> 2025</option>
+                            <option value="26"> 2026</option>
+                            <option value="27"> 2027</option>
+                            <option value="28"> 2028</option>
+                            <option value="29"> 2029</option>
+                            <option value="30"> 2030</option>
+
+                        </select>
+                    
+                        </div>
+                        <div id="tarjetas">
+                            
+                         <div id="dtarjeta1"><input type="radio" id="bTarjeta" name="tipotarjeta" value="visa">  <img src="imagenes/visa.png" id="visa" alt="imagen visa"></div>
+                         <div id="dtarjeta2"><input type="radio" id="bTarjeta" name="tipotarjeta" value="mastercard">  <img src="imagenes/mastercard.png" id="mastercard" alt="imagen mastercard"></div>
+                         <div id="dtarjeta3"><input type="radio" id="bTarjeta" name="tipotarjeta" value="amex"> <img src="imagenes/amex.png" id="amex" alt="imagen amex"></div>
+                        </div>
+                </div>
+                    <div id="noti">
+                        <input type="checkbox" id="notificaciones"><label><p id="hn2">Activar notificaciones de la pagina.</p></label>
+                    </div>
+                    <div id="letter">
+                        <input type="checkbox" id="newsletter"><label><p id="hn">Deseo recibir la newsletter semanal con las novedades de la página.</p></label>
+                    </div>
+                    
+                
+               
+
 
             <input id="boton" type="submit" value="JOIN!"> 
             
