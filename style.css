@@ -509,7 +509,19 @@ footer img{
     flex-direction: row;
     width: 100%;
 }
+#r1{
+    display:none;
+    width: 100%;
+    flex-direction: column;
 
+}
+#v1,#v2{
+    margin-top: 0.2vw;
+    margin-bottom: 0.2vw;
+    margin-left:16.5vw;
+    color:red;
+    font-size: 1vw;
+}
 @media (max-width: 600px) {
 main{
     display:flex;
@@ -756,6 +768,10 @@ font-size:4vw;
 }
 #hn2{
     width:100%
+}
+#v1,#v2{
+    font-size: 3vw;
+    margin-left: 17.5vw;
 }
 }
 

@@ -39,16 +39,19 @@
             <p id="obligatorio">*Campos obligatorios</p>
             <div id="np">
             <label for="nombre" hidden>Nombre</label>
-            <input type="text" id="nombre" placeholder="Nombre*" size="30" required> 
+            <input type="text" id="nombre" placeholder="Nombre*" size="30"> 
         
             
                 <label for="apellidos" name="apellidos" alt="apellidos" hidden>Apellido</label> 
-                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" required>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos*" >
             
+            </div>
+            <div id="r1">
+                <p id="v1"></p><p id="v2"></p>
             </div>
             <div id="email">
             <label for="mail" hidden> mail</label>
-            <input type="email" id="mail" placeholder="E-mail*" required>
+            <input type="email" id="mail" placeholder="E-mail*" >
             </div>
             <div id="date">
                 <div id="contenidos">
@@ -63,9 +66,9 @@
                 </div>
                 <div id="contra">
                     <label for="contrasena1" hidden>Contraseña</label>
-                    <input id="contrasena1" type="password" name="password" placeholder="Contraseña*" required>
+                    <input id="contrasena1" type="password" name="password" placeholder="Contraseña*" >
                     <label for="contrasena2" hidden>Repetir contraseña</label>
-                    <input id="contrasena2" type="password" name="password" placeholder="Repetir Contraseña*" required>
+                    <input id="contrasena2" type="password" name="password" placeholder="Repetir Contraseña*" >
                 </div>
 
                 <div id="adress">
@@ -391,6 +394,6 @@
 
     </footer>
     </main>
-
+    <script src="validacionJS.js"></script>
 </body>
 </html>
