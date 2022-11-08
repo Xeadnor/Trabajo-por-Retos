@@ -35,9 +35,11 @@ const resDir1 = document.getElementById("v6");
 const resDir3 = document.getElementById("v7");
 const resDir4 = document.getElementById("v8");
 const cn = document.getElementById("v9");
-
+const divSubmit=document.getElementById("r10")
+const resultSubmit= document.getElementById("v10");
 const cardN = document.getElementById("cardNumber");
 const card = document.getElementsByName("tipotarjeta")
+
 dir1.addEventListener("keyup",comprobarDirPais);
 dir2.addEventListener("keyup",comprobarDirPais);
 dir3.addEventListener("keyup",comprobarDirPais);
@@ -50,7 +52,9 @@ function validar(e){
 
 if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
 &comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)&comprobarDir1(dir1)&comprobarDir3(dir3)&comprobarDir4(dir4)&comprobarTarjeta(card,cardN)){
-    alert("Se ha enviado el formulario");
+    divSubmit.style.display="flex";
+    resultSubmit.innerHTML="El formulario se ha enviado correctamente";
+    document.getElementById('form').reset() // al enviarse el formulario se vacian los campos
     return true;
 }
   return false;
@@ -74,7 +78,7 @@ function comprobarFecha(fecha) {
 }
 function comprobarNombre(nombre){
     let nom= nombre.value;
-    let sinEspacios= nom.trim();
+    let sinEspacios= nom.trim();// se eliminan espacios al inicioy final de la cadena
      let cont=0;
      if(nom.length == 0){
         divNom.style.display="flex";
@@ -84,7 +88,7 @@ function comprobarNombre(nombre){
     for (let i = 0; i < sinEspacios.length; i++) {
         const element = sinEspacios[i];
       
-        if(element== " "){
+        if(element== " "){// cuanto numero de espacios en blanco
             cont++;
         }
     }
@@ -154,7 +158,7 @@ function comprobarMail(mail) {
 
 function comprobarContrasenna(psw1, psw2){
 
-    const expReg= /^(?=.*\d)(?=.*[!-+<-@])(?=.*[A-Z])(?=.*[a-z]).{8,}$/
+    const expReg= /^(?=.*\d)(?=.*[!-+<-@])(?=.*[A-Z])(?=.*[a-z]).{8,}$/;
     const long= new RegExp('.{8,}');
     const mayus= new RegExp('(?=.*[A-Z])');
     const minusc= new RegExp('(?=.*[a-z])');
@@ -163,7 +167,7 @@ function comprobarContrasenna(psw1, psw2){
 
     if(psw1.value.length == 0 || psw2.value.length == 0){
         divC.style.display="flex";
-         resC.innerHTML= "Las contraseñas son un campo obligatorio";
+         resC.innerHTML= "Las contraseñas es un campo obligatorio";
          return false;
     }
     if(psw1.value!=psw2.value){  
@@ -216,9 +220,9 @@ function comprobarDirPais(){
     t4.innerHTML = año+4;
     
     if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0&&pais.value!="Ninguno"){
-            tarjeta.style.display="inline";
+            tarjeta.style.display="inline";//mostrar campos de tarjeta
     }else{
-        tarjeta.style.display="none";
+        tarjeta.style.display="none";//ocultar campos de tarjeta
 
     }
     
@@ -281,7 +285,7 @@ function comprobarTarjeta(card,cardN) {
         divCard.style.display="none"
         return true;
     }
-    if(card[0].checked){
+    if(card[0].checked){//comprbacion visa
         if(!visaRegEx.test(cardN.value)){
             divCard.style.display="inline"
             cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
@@ -291,7 +295,7 @@ function comprobarTarjeta(card,cardN) {
             return true;
         }
     }
-    if(card[1].checked){//mastercard
+    if(card[1].checked){//comprobacion mastercard
         if(!mastercardRegEx.test(cardN.value)){
             divCard.style.display="inline"
             cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
@@ -301,7 +305,7 @@ function comprobarTarjeta(card,cardN) {
             return true;
         }
     }
-    if(card[2].checked){//amex
+    if(card[2].checked){//comprobacion american express
         if(!amexpRegEx.test(cardN.value)){
             divCard.style.display="inline"
             cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
