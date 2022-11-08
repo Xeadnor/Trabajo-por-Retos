@@ -509,18 +509,21 @@ footer img{
     flex-direction: row;
     width: 100%;
 }
-#r1{
+#r1, #r2, #r3,#r4{
     display:none;
     width: 100%;
     flex-direction: column;
 
 }
-#v1,#v2{
+#v1,#v2,#v3,#v4,#v5{
     margin-top: 0.2vw;
     margin-bottom: 0.2vw;
     margin-left:16.5vw;
     color:red;
     font-size: 1vw;
+}
+#tarjeta{
+    display:none;
 }
 @media (max-width: 600px) {
 main{
@@ -769,7 +772,7 @@ font-size:4vw;
 #hn2{
     width:100%
 }
-#v1,#v2{
+#v1,#v2,#v3,#v4,#v5{
     font-size: 3vw;
     margin-left: 17.5vw;
 }

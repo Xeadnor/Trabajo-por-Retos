@@ -15,22 +15,31 @@ const mail = document.getElementById("mail");
 const fecha = document.getElementById("fecha");
 const resNom= document.getElementById("v1");
 const divNom = document.getElementById("r1")
-const resAp= document.getElementById("v2");
-const resM= document.getElementById("resultMail");
-const resC= document.getElementById("resultCont");
+const divE = document.getElementById("r2")
+const resAp= document.getElementById("v2"); 
+const resM= document.getElementById("v3");
+const divD = document.getElementById("r3")
+const divC = document.getElementById("r4")
+const resF= document.getElementById("v4");
+const resC= document.getElementById("v5");
+const ty = document.getElementById("ty");
+const t1 = document.getElementById("t1");
+const t2 = document.getElementById("t2");
+const t3 = document.getElementById("t3");
+const t4 = document.getElementById("t4");
 
-dir1.addEventListener("keydown",comprobarDirPais);
-dir2.addEventListener("keydown",comprobarDirPais);
-dir3.addEventListener("keydown",comprobarDirPais);
-dir4.addEventListener("keydown",comprobarDirPais);
+dir1.addEventListener("keyup",comprobarDirPais);
+dir2.addEventListener("keyup",comprobarDirPais);
+dir3.addEventListener("keyup",comprobarDirPais);
+dir4.addEventListener("keyup",comprobarDirPais);
 pais.addEventListener("click",comprobarDirPais);
 
 
 function validar(e){
     e.preventDefault();
 
-if(comprobarNombre(nombre)&&comprobarApellido(apellidos)&&comprobarMail(mail)&& comprobarContrasenna(psw1, psw2)
-&&comprobarFecha(fecha.value)){
+if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
+&comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)){
     alert("Se ha enviado el formulario");
     return true;
 }
@@ -43,14 +52,13 @@ function comprobarFecha(fecha) {
    fHoy.setFullYear;
    fHoy.setMonth;
    fHoy.setDate;
-   console.log(fHoy);
-   console.log(f);
-
-   if((fHoy - f) > 568025136000 ){
-    return true;
-   }else{
-    alert("Debes tener al menos 18 años")
+   if((fHoy - f) < 568025136000 ){
+    divD.style.display="flex";
+    resF.innerHTML= "El usuario debe ser mayor de 18 años";
     return false;
+   }else{
+    divD.style.display="none";
+    return true;
    }
     
 }
@@ -61,7 +69,6 @@ function comprobarNombre(nombre){
      if(nom.length == 0){
         divNom.style.display="flex";
         resNom.innerHTML= "El nombre es un campo obligatorio";
-        resNom.style.color="#E72405"
         return false;
     }
     for (let i = 0; i < sinEspacios.length; i++) {
@@ -78,7 +85,6 @@ function comprobarNombre(nombre){
     }else{
         divNom.style.display="flex";
         resNom.innerHTML= "El nombre no puede tener más de 2 palabras";
-        resNom.style.color="#E72405"
         return false;
     }
 
@@ -91,7 +97,6 @@ function comprobarApellido(apellidos){
     if(ap.length == 0){
         divNom.style.display="flex";
         resAp.innerHTML= "El apellido es un campo obligatorio";
-        resAp.style.color="#E72405"
         
         return false;
     }
@@ -106,12 +111,10 @@ function comprobarApellido(apellidos){
     
     if (cont<=1){
         resAp.innerHTML= "";
-       
         return true;
     }else{
         divNom.style.display="flex";
         resAp.innerHTML= "El apellido no puede tener más de 2 palabras";
-        resAp.style.color="#E72405"
     
         return false;
         
@@ -124,16 +127,16 @@ function comprobarMail(mail) {
     
     const email = new RegExp(/[a-z0-9_\-.]+[@]+[a-z]+\.[a-z]*/);
     if(mail.value.length == 0){
+        divE.style.display="flex";
         resM.innerHTML= "El e-mail es un campo obligatorio";
-        resM.style.color="#E72405";
         return false;
     }
     if(email.test(mail.value)){
         resM.innerHTML= "";
         return true;
     }else{
+        divE.style.display="flex";
         resM.innerHTML= "No es un email válido";
-        resM.style.color="#E72405";
         return false;
     }
     
@@ -141,38 +144,55 @@ function comprobarMail(mail) {
 
 function comprobarContrasenna(psw1, psw2){
 
-    //NO CUMPLEN LOS CARACTERES ESPECIALES!!!!!
+    console.log(psw1.value);
+    console.log(psw2.value);
 
-    const expReg= new RegExp('(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^\w\s]).{8,}');
+    const expReg= /^(?=.*\d)(?=.*[!-+<-@])(?=.*[A-Z])(?=.*[a-z]).{8,}$/
     const long= new RegExp('.{8,}');
     const mayus= new RegExp('(?=.*[A-Z])');
     const minusc= new RegExp('(?=.*[a-z])');
     const numer=new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
 
+    if(psw1.value.length == 0 || psw2.value.length == 0){
+        divC.style.display="flex";
+         resC.innerHTML= "Las contraseñas son un campo obligatorio";
+         return false;
+    }
+    if(psw1.value!=psw2.value){  
+        divC.style.display="flex";
+        resC.innerHTML= "Las contraseñas no coinciden";
+        return false;
+    }
 
     if (expReg.test(psw1.value)) {
-        if(psw1.value==psw2.value){  
-            return true;
-        }else{
-            resC.innerHTML= "Las contraseñas no coinciden";
-            resC.style.color="#E72405"
-        }
+        divC.style.display="none";
+        return true;
     }else{
+        console.log("false")
         if(!long.test(psw1.value)){
+            divC.style.display="flex";
             resC.innerHTML= "La contraseña debe tener al menos 8 caracteres";
-            resC.style.color="#E72405"
+            return false;
         }else if(!mayus.test(psw1.value)){
+            divC.style.display="flex";
             resC.innerHTML= "La contraseña debe incluir al menos una letra mayúscula";
-            resC.style.color="#E72405"
+            return false;
         }else if(!minusc.test(psw1.value)){
+            divC.style.display="flex";
             resC.innerHTML= "La contraseña debe incluir al menos una letra minúscula";
-            resC.style.color="#E72405"
+            return false;
         }else if(!numer.test(psw1.value)){
+            divC.style.display="flex";
             resC.innerHTML= "La contraseña debe incluir al menos un número";
-            resC.style.color="#E72405"
-        }else{
+            return false;
+        }else if(!especial.test(psw1.value)){
+            divC.style.display="flex";
             resC.innerHTML= "La contraseña debe incluir al menos un caracter especial";
-            resC.style.color="#E72405"
+            console.log(psw1.value)
+            return false;
+        }else{
+            console.log("prueba")
         }
         
     }
@@ -180,11 +200,18 @@ return false;
 }
 
 function comprobarDirPais(){
-    if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0){
-        if(pais.value!="Ninguno"){
+    var date = new Date;
+    var año = date.getFullYear();
+    ty.innerHTML = año;
+    t1.innerHTML = año+1;
+    t2.innerHTML = año+2;
+    t3.innerHTML = año+3;
+    t4.innerHTML = año+4;
+    if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0&&pais.value!="Ninguno"){
             tarjeta.style.display="inline";
-            return true;
-        }
+    }else{
+        tarjeta.style.display="none";
+
     }
 
     const eRd1= new RegExp();

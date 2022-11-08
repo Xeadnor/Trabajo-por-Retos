@@ -53,6 +53,9 @@
             <label for="mail" hidden> mail</label>
             <input type="email" id="mail" placeholder="E-mail*" >
             </div>
+            <div id="r2">
+                <p id="v3"></p>
+            </div> 
             <div id="date">
                 <div id="contenidos">
                     <label for="fecha">Cumpleaños</label>
@@ -64,13 +67,18 @@
                     <input type="radio" id="sexo" name="boton" value="otro"> Prefiero no decirlo
             </p>
                 </div>
+                <div id="r3">
+                    <p id="v4"></p>
+                </div> 
                 <div id="contra">
                     <label for="contrasena1" hidden>Contraseña</label>
                     <input id="contrasena1" type="password" name="password" placeholder="Contraseña*" >
                     <label for="contrasena2" hidden>Repetir contraseña</label>
                     <input id="contrasena2" type="password" name="password" placeholder="Repetir Contraseña*" >
                 </div>
-
+                <div id="r4">
+                    <p id="v5"></p>
+                </div> 
                 <div id="adress">
                     <label for="direccion1" hidden>Direccion de la calle/via</label>
                     <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
@@ -289,7 +297,7 @@
                   
                     
                         <label for="cvv" hidden>CVV</label>
-                        <input type="number" class="form-control" id="cvv" placeholder="CVV">
+                        <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="3">
                     
                    
                         <label for="cardNumber" hidden>Número de tarjeta</label>
@@ -314,15 +322,13 @@
                         </select>
                         <label for="ayoCaducidad" hidden>Año de caducidad</label>
                         <select id="ayoCaducidad">
-                            <option value="22"> 2022</option>
-                            <option value="23"> 2023</option>
-                            <option value="24"> 2024</option>
-                            <option value="25"> 2025</option>
-                            <option value="26"> 2026</option>
-                            <option value="27"> 2027</option>
-                            <option value="28"> 2028</option>
-                            <option value="29"> 2029</option>
-                            <option value="30"> 2030</option>
+                            <option value="22" id="ty"> </option>
+                            <option value="23" id="t1"> </option>
+                            <option value="24" id="t2"> </option>
+                            <option value="25" id="t3"> </option>
+                            <option value="26" id="t4"> </option>
+                       
+
 
                         </select>
                     
@@ -394,6 +400,6 @@
 
     </footer>
     </main>
-    <script src="validacionJS.js"></script>
+    <script src="JS/validacionJS.js"></script>
 </body>
 </html>
