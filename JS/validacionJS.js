@@ -27,7 +27,17 @@ const t1 = document.getElementById("t1");
 const t2 = document.getElementById("t2");
 const t3 = document.getElementById("t3");
 const t4 = document.getElementById("t4");
+const divDir1 = document.getElementById("r5")
+const divDir3 = document.getElementById("r6")
+const divDir4 = document.getElementById("r7")
+const divCard = document.getElementById("r8")
+const resDir1 = document.getElementById("v6");
+const resDir3 = document.getElementById("v7");
+const resDir4 = document.getElementById("v8");
+const cn = document.getElementById("v9");
 
+const cardN = document.getElementById("cardNumber");
+const card = document.getElementsByName("tipotarjeta")
 dir1.addEventListener("keyup",comprobarDirPais);
 dir2.addEventListener("keyup",comprobarDirPais);
 dir3.addEventListener("keyup",comprobarDirPais);
@@ -39,7 +49,7 @@ function validar(e){
     e.preventDefault();
 
 if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
-&comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)){
+&comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)&comprobarDir1(dir1)&comprobarDir3(dir3)&comprobarDir4(dir4)&comprobarTarjeta(card,cardN)){
     alert("Se ha enviado el formulario");
     return true;
 }
@@ -144,9 +154,6 @@ function comprobarMail(mail) {
 
 function comprobarContrasenna(psw1, psw2){
 
-    console.log(psw1.value);
-    console.log(psw2.value);
-
     const expReg= /^(?=.*\d)(?=.*[!-+<-@])(?=.*[A-Z])(?=.*[a-z]).{8,}$/
     const long= new RegExp('.{8,}');
     const mayus= new RegExp('(?=.*[A-Z])');
@@ -189,10 +196,10 @@ function comprobarContrasenna(psw1, psw2){
         }else if(!especial.test(psw1.value)){
             divC.style.display="flex";
             resC.innerHTML= "La contraseña debe incluir al menos un caracter especial";
-            console.log(psw1.value)
+            
             return false;
         }else{
-            console.log("prueba")
+            
         }
         
     }
@@ -207,17 +214,108 @@ function comprobarDirPais(){
     t2.innerHTML = año+2;
     t3.innerHTML = año+3;
     t4.innerHTML = año+4;
+    
     if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0&&pais.value!="Ninguno"){
             tarjeta.style.display="inline";
     }else{
         tarjeta.style.display="none";
 
     }
-
-    const eRd1= new RegExp();
-    const eRd3= new RegExp();
-
-   return false;
+    
 }
+
+function comprobarDir1(dir1) {
+    const number = new RegExp('(?=.*[0-9])');
+    if(dir1.value.length == 0){
+        divDir1.style.display="none"
+        return true;
+    }else{
+        if(number.test(dir1.value)){
+            divDir1.style.display="inline"
+            resDir1.innerHTML="No se admiten numeros";
+            return false;
+            
+         }else{
+             divDir1.style.display="none"
+         }
+    }
+}
+function comprobarDir3(dir3) {
+    const number = new RegExp('(?=.*[0-9])');
+    if(dir3.value.length == 0){
+        divDir3.style.display="none"
+        return true;
+    }else{
+        if(number.test(dir3.value)){
+            divDir3.style.display="inline"
+            resDir3.innerHTML="No se admiten numeros";
+            return false;
+            
+         }else{
+             divDir3.style.display="none"
+         }
+    }
+}
+function comprobarDir4(dir4) {
+    const number2 = new RegExp("(?=.*[^0-9])");
+    if(dir4.value.length == 0){
+        divDir4.style.display="none"
+        return true;
+    }else{
+        if(number2.test(dir4.value) || dir4.value.length != 5){
+            divDir4.style.display="inline"
+            resDir4.innerHTML="Solo se admiten 5 numeros";
+            return false;
+         }else{
+             divDir4.style.display="none"
+         }
+        }
+     
+}
+
+function comprobarTarjeta(card,cardN) {
+    var visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
+    var mastercardRegEx = /^(?:5[1-5][0-9]{14})$/;
+    var amexpRegEx = /^(?:3[47][0-9]{13})$/;
+    if(cardN.value.length == 0){
+        divCard.style.display="none"
+        return true;
+    }
+    if(card[0].checked){
+        if(!visaRegEx.test(cardN.value)){
+            divCard.style.display="inline"
+            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            return false;
+        }else{
+            divCard.style.display="none"
+            return true;
+        }
+    }
+    if(card[1].checked){//mastercard
+        if(!mastercardRegEx.test(cardN.value)){
+            divCard.style.display="inline"
+            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            return false;
+        }else{
+            divCard.style.display="none"
+            return true;
+        }
+    }
+    if(card[2].checked){//amex
+        if(!amexpRegEx.test(cardN.value)){
+            divCard.style.display="inline"
+            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            return false;
+        }else{
+            divCard.style.display="none"
+            return true;
+        }
+    }
+    
+    
+}
+
+
+
 
 

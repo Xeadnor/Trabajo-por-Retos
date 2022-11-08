@@ -82,13 +82,19 @@
                 <div id="adress">
                     <label for="direccion1" hidden>Direccion de la calle/via</label>
                     <textarea id="direccion1" name="direccion1" placeholder="Dirección de la calle/vía"></textarea>
+                    <div id="r5">
+                        <p id="v6"></p>
+                    </div> 
                     <label for="direccion2" hidden>Bloque,piso, portal...</label>
                     <textarea id="direccion2" name="direccion2" placeholder="Bloque,piso, portal..."></textarea></br>
                     <label for="direccion3" hidden>Población</label>
                     <textarea id="direccion3" name="direccion3" placeholder="Población"></textarea>
+                    <div id="r6">
+                        <p id="v7"></p>
+                    </div> 
                      <div id="adress2">
                     <label for="direccion4" hidden>Codigo Postal</label>  
-                     <input type="number" id="direccion4" name="cp" placeholder="Código Postal" > 
+                     <input type="text" id="direccion4" name="cp" placeholder="Código Postal" maxlength="5"> 
                     <select name="pais" id="pais">
                         <option value="Ninguno">Seleccione el país</option>
                         <option value="Afganistán">Afganistán</option>
@@ -286,6 +292,9 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabue">Zimbabue</option>
                     </select>
+                    <div id="r7">
+                        <p id="v8"></p>
+                    </div> 
                 </div>
                 </div>
 
@@ -293,15 +302,15 @@
                     <h2 id="h2t">Datos de tarjeta</h2>
                     
                         <label for="owner" hidden>Propietario</label>
-                        <input type="text" class="form-control" id="owner" placeholder="Propietario">
+                        <input type="text" id="owner" placeholder="Propietario">
                   
                     
                         <label for="cvv" hidden>CVV</label>
-                        <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="3">
+                        <input type="text" id="cvv" placeholder="CVV" maxlength="3">
                     
                    
                         <label for="cardNumber" hidden>Número de tarjeta</label>
-                        <input type="text" class="form-control" id="cardNumber" placeholder="Numero de tarjeta">
+                        <input type="text" id="cardNumber" placeholder="Numero de tarjeta">
                    
                         <p id="lt">Fecha de caducidad</p>
                         <div id="fCaducidad">
@@ -322,6 +331,7 @@
                         </select>
                         <label for="ayoCaducidad" hidden>Año de caducidad</label>
                         <select id="ayoCaducidad">
+                            <option value="Ninguno">Elegir año </option>
                             <option value="22" id="ty"> </option>
                             <option value="23" id="t1"> </option>
                             <option value="24" id="t2"> </option>
@@ -339,12 +349,15 @@
                          <div id="dtarjeta2"><input type="radio" id="bTarjeta" name="tipotarjeta" value="mastercard">  <img src="imagenes/mastercard.png" id="mastercard" alt="imagen mastercard"></div>
                          <div id="dtarjeta3"><input type="radio" id="bTarjeta" name="tipotarjeta" value="amex"> <img src="imagenes/amex.png" id="amex" alt="imagen amex"></div>
                         </div>
+                        <div id="r8">
+                            <p id="v9"></p>
+                        </div> 
                 </div>
                     <div id="noti">
                         <input type="checkbox" id="notificaciones"><label><p id="hn2">Activar notificaciones de la pagina.</p></label>
                     </div>
                     <div id="letter">
-                        <input type="checkbox" id="newsletter"><label><p id="hn">Deseo recibir la newsletter semanal con las novedades de la página.</p></label>
+                        <input type="checkbox" id="newsletter" checked><label><p id="hn">Deseo recibir la newsletter semanal con las novedades de la página.</p></label>
                     </div>
                     
                 
@@ -358,7 +371,7 @@
         </div>
         <div id="camis">
             <img id="camisetas" src="imagenes/camisetas.png" alt="camisetas">
-
+            <img id="orgullo" src="imagenes/orgullo.png" alt="orgullo">
         </div>
     </div>
     <div id="descuentos">
