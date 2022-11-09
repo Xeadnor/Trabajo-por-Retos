@@ -62,14 +62,16 @@ main{
     width:40%;
     font-size: 2.5vw;
     text-align: center;
-    font-family: 'PermanentMarker'
+    font-family: 'PermanentMarker';
+    text-shadow: 0.1em 0.1em 0.1em rgb(70, 69, 69);
 }
 #fgancho{
     display: flex;
     justify-content: center;
     width: 100%;
-    color:rgb(247, 251, 5);
+    color:rgb(251, 226, 5);
     font-family: 'PermanentMarker';
+    text-shadow: 0.2em 0.2em 0.2em grey;
 }
 #fgancho p{
     margin-top:20px;
@@ -86,6 +88,18 @@ main{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+input{
+    width:max-content;
+    margin: 0.8vw;
+    border: 2px solid #65aa8f;
+    border-radius: 4px;
+}
+select, textarea{
+    width:max-content;
+    margin: 0.2vw;
+    border: 2px solid #65aa8f;
+    border-radius: 4px;
 }
 ::placeholder{
     color: black;
@@ -104,7 +118,7 @@ main{
     margin-left:16.5vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -112,7 +126,7 @@ main{
     margin-left:4.7vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -123,9 +137,9 @@ main{
 }
 #mail{
     margin-left:16.5vw;
-    width:30vw;
+    width:31vw;
     height:3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 
@@ -137,7 +151,7 @@ main{
 }
 #contenidos{
     margin-top:0.5vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     display:flex;
     justify-content: center;
     flex-direction: column;
@@ -152,18 +166,19 @@ main{
 
 }
 #fecha{
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     color:black;
     font-size: 1.4vw;
     font-weight: thin;
     border:0;
+    margin:0vw;
 
 }
 #tsexo{
     font-size: 1.4vw;
 }
 #sexo{
-    background:rgb(176, 247, 129);
+    background:rgb(198, 240, 170);
     width:1vw;
     height: 1vw;
     font-size: 2vw;
@@ -213,7 +228,7 @@ main{
     margin-left:16.5vw;
     width:14.5vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -221,16 +236,16 @@ main{
     margin-left: 0.3vw;
     width:14.5vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
 #direccion1, #direccion2,  #direccion3{
     margin-left: 16.5vw;
     margin-top:1vw;
-    width:30vw;
+    width:31vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -239,7 +254,7 @@ main{
     margin-top:1vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
     color:black
@@ -249,7 +264,7 @@ main{
     margin-top:1.1vw;
     margin-left:1.7vw;
     width:16vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     height: 3.3vw;
     text-align: center;
     font-size: 1.4vw;
@@ -280,7 +295,7 @@ main{
     margin-top: 1vw;
     width: 30vw;
     height: 3vw;
-    background-color: rgb(176, 247, 129);
+    background-color: rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -306,7 +321,7 @@ main{
     margin-top:1vw;
     width:15.3vw;
     height: 3vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     text-align: center;
     font-size: 1.4vw;
     color: black;
@@ -317,7 +332,7 @@ main{
     margin-top:1vw;
     margin-left:1.7vw;
     width:13.7vw;
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(198, 240, 170);
     height: 3.1vw;
     text-align: center;
     font-size: 1.2vw;
@@ -373,7 +388,7 @@ main{
 }
 
 #boton{
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(251, 226, 5);
     border: none;
     color: black;   
     margin-left: 4vw;
@@ -389,7 +404,7 @@ main{
     height: 3.5vw;
 }
 #reset{
-    background-color:rgb(176, 247, 129);
+    background-color:rgb(251, 226, 5);
     border: none;
     color: black;   
     margin-left: 4vw;
@@ -409,18 +424,19 @@ main{
 #camis{
     display:flex;
     flex-direction: column;
-    margin-top: 4vw;
     width:29%;
 }
 #orgullo{
-    margin-left: -16vw;
-    margin-top:2vw;
-    width:60vw;
-    height: 30vw;
+    margin-left: -8vw;
+    margin-top: -4vw;
+    width:43vw;
+    height: 32vw;
 }
 #camisetas{
     width:30vw;
     height: 25vw;
+    margin-top: -4vw;
+
 }
 
 #descuentos{
@@ -450,7 +466,7 @@ margin-left:30vw;
 color:white;
 text-align: left;
 font-size: 2vw;
-font-family: 'SpaceMono-Bold';
+font-family: 'Comfortaa';
 }
 
 #custom{
@@ -536,7 +552,7 @@ footer img{
     justify-content: right;
     align-items: center;
 }
-#log{
+#logo1{
     width:55%;
     display:flex;
     justify-content: right;
@@ -570,10 +586,14 @@ footer img{
 #tarjeta{
     display:none;
 }
+#logo2{
+    display: none;
+    width:55%;
+    justify-content: right;
+}
 #seta{
-    display:none;
-    width:5vw;
-    height:5vw;
+    width:7vw;
+    height:7vw;
     justify-self: center;
 }
 #red{
@@ -604,6 +624,9 @@ footer img{
     width:60%;
     font-size: 4vw;
     text-align: left;
+}
+#camis{
+    margin-top: 5vw;
 }
 #orgullo{
     display:none;
@@ -738,6 +761,9 @@ font-size:4vw;
     width: 7vw;
     height: 7vw;
 }
+footer{
+    margin-top: -4vw;
+}
 #dtfooter{
     font-size: 2.5vw;
 }
@@ -858,11 +884,7 @@ font-size:4vw;
     font-size: 3vw;
     margin-left: 17.5vw;
 }
-#logo{
-    width:28vw;
-    height:16vw;
-    justify-self:center
-}
+
 ::placeholder{
     color: black;
     font-family: 'Comfortaa';
