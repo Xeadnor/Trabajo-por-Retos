@@ -34,24 +34,95 @@ const divCard = document.getElementById("r8")
 const resDir1 = document.getElementById("v6");
 const resDir3 = document.getElementById("v7");
 const resDir4 = document.getElementById("v8");
+const divO = document.getElementById("r11");
+const divCVV = document.getElementById("r12");
+const resO = document.getElementById("v11");
+const resCVV = document.getElementById("v12");
+const resCaducidad = document.getElementById("v13");
+const divCaducidad = document.getElementById("r13");
+const ayoC = document.getElementById("ayoCaducidad")
+const mesC = document.getElementById("mesCaducidad")
+
 const cn = document.getElementById("v9");
 const divSubmit=document.getElementById("r10")
 const resultSubmit= document.getElementById("v10");
 const cardN = document.getElementById("cardNumber");
 const card = document.getElementsByName("tipotarjeta")
 
+const owner = document.getElementById("owner")
+const cvv = document.getElementById("cvv")
+
 dir1.addEventListener("keyup",comprobarDirPais);
 dir2.addEventListener("keyup",comprobarDirPais);
 dir3.addEventListener("keyup",comprobarDirPais);
 dir4.addEventListener("keyup",comprobarDirPais);
 pais.addEventListener("click",comprobarDirPais);
+const header = document.getElementById("headerLogo");
+const m1 = document.getElementById("m1");
+const logo = document.getElementById("logo");
+document.addEventListener("scroll",headL);
+const rest = document.getElementById("reset");
+rest.addEventListener("click",resetear);
+const body = document.getElementById("body");
+form.addEventListener("keydown",env);
+function env() {
+    divSubmit.style.display="none";
+}
+function resetear() {
+    divCard.style.display="none"
+    divDir4.style.display="none"
+    divDir3.style.display="none"
+    divDir1.style.display="none"
+    tarjeta.style.display="none"
+    divC.style.display="none";
+    divD.style.display="none";
+    divNom.style.display="none";
+    divE.style.display="none";
+    divSubmit.style.display="none";
+}
 
+function headL() {
+    console.log(window.innerWidth);
+    console.log(window.scrollY);
+    if(window.innerWidth > 600){
+        if(window.scrollY > 100){
+            m1.style.display="none";
+            logo.style.marginLeft="-35.8vw";
+            logo.style.width="12vw"
+            logo.style.height="7vw"
+            header.style.height="6vw";
+        }else{
+            m1.style.display="flex";
+            logo.style.marginLeft="0vw";
+            logo.style.width="20vw"
+            logo.style.height="10vw"
+            header.style.height="9vw";
+        }
+    }else if(window.innerWidth < 600){
+        if(window.scrollY > 50){
+            m1.style.display="none";
+            logo.style.marginLeft="-40vw";
+            logo.style.width="20vw"
+            logo.style.height="13vw"
+            header.style.height="11vw";
+        }else{
+            m1.style.display="flex";
+            logo.style.marginLeft="0vw";
+            logo.style.width="28vw"
+            logo.style.height="16vw"
+            header.style.height="13vw";
+        }
+    }
+
+    
+}
 
 function validar(e){
     e.preventDefault();
 
 if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
-&comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)&comprobarDir1(dir1)&comprobarDir3(dir3)&comprobarDir4(dir4)&comprobarTarjeta(card,cardN)){
+&comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)&comprobarDir1(dir1)&comprobarDir3(dir3)&comprobarDir4(dir4)&comprobarTarjeta(card,cardN)
+&comprobarowner(owner)&comprobarcvv(cvv)&comprobardatecard(ayoC,mesC)){
     divSubmit.style.display="flex";
     resultSubmit.innerHTML="El formulario se ha enviado correctamente";
     document.getElementById('form').reset() // al enviarse el formulario se vacian los campos
@@ -77,6 +148,7 @@ function comprobarFecha(fecha) {
     
 }
 function comprobarNombre(nombre){
+    const number = new RegExp('(?=.*[0-9])');
     let nom= nombre.value;
     let sinEspacios= nom.trim();// se eliminan espacios al inicioy final de la cadena
      let cont=0;
@@ -92,6 +164,11 @@ function comprobarNombre(nombre){
             cont++;
         }
     }
+    if(number.test(nombre.value)){
+        divNom.style.display="flex"
+        resNom.innerHTML="El nombre no admite numeros";
+        return false;
+    }
     
     if (cont<=1){
         resNom.innerHTML= ""
@@ -102,9 +179,11 @@ function comprobarNombre(nombre){
         return false;
     }
 
+
 }
 
 function comprobarApellido(apellidos){
+    const number = new RegExp('(?=.*[0-9])');
     let ap= apellidos.value;
     let sinEspacios= ap.trim();
     let cont=0;
@@ -121,7 +200,11 @@ function comprobarApellido(apellidos){
             cont++;
         }
     }
-    
+    if(number.test(apellidos.value)){
+        divNom.style.display="flex"
+        resAp.innerHTML="El apellido no admite numeros";
+        return false;
+    }
     
     if (cont<=1){
         resAp.innerHTML= "";
@@ -223,6 +306,7 @@ function comprobarDirPais(){
             tarjeta.style.display="inline";//mostrar campos de tarjeta
     }else{
         tarjeta.style.display="none";//ocultar campos de tarjeta
+        
 
     }
     
@@ -232,6 +316,7 @@ function comprobarDir1(dir1) {
     const number = new RegExp('(?=.*[0-9])');
     if(dir1.value.length == 0){
         divDir1.style.display="none"
+        
         return true;
     }else{
         if(number.test(dir1.value)){
@@ -248,6 +333,7 @@ function comprobarDir3(dir3) {
     const number = new RegExp('(?=.*[0-9])');
     if(dir3.value.length == 0){
         divDir3.style.display="none"
+        
         return true;
     }else{
         if(number.test(dir3.value)){
@@ -264,6 +350,7 @@ function comprobarDir4(dir4) {
     const number2 = new RegExp("(?=.*[^0-9])");
     if(dir4.value.length == 0){
         divDir4.style.display="none"
+        
         return true;
     }else{
         if(number2.test(dir4.value) || dir4.value.length != 5){
@@ -283,6 +370,7 @@ function comprobarTarjeta(card,cardN) {
     var amexpRegEx = /^(?:3[47][0-9]{13})$/;
     if(cardN.value.length == 0){
         divCard.style.display="none"
+        
         return true;
     }
     if(card[0].checked){//comprbacion visa
@@ -315,7 +403,57 @@ function comprobarTarjeta(card,cardN) {
             return true;
         }
     }
-    
+}
+function comprobarowner(owner) {
+    const number = new RegExp('(?=.*[0-9])');
+    if(owner.value.length == 0){
+        divO.style.display="none"
+        return true;
+    }else{
+        if(number.test(owner.value)){
+            divO.style.display="inline"
+            resO.innerHTML="No se admiten numeros";
+            return false;
+            
+         }else{
+             divO.style.display="none"
+         }
+    }
+}
+function comprobarcvv(cvv) {
+    const number2 = new RegExp("(?=.*[^0-9])");
+    if(cvv.value.length == 0){
+        divCVV.style.display="none"
+        
+        return true;
+    }else{
+        if(number2.test(cvv.value) || cvv.value.length != 3){
+            divCVV.style.display="inline"
+            resCVV.innerHTML="Solo se admiten 3 numeros";
+            return false;
+         }else{
+             divCVV.style.display="none"
+         }
+        }
+     
+}
+
+function comprobardatecard(ayo,mes) {
+    var date = new Date(); 
+    var month = date.getMonth();
+    if(ayo.value == 22){
+        if(month <= mes.value){
+            divCaducidad.style.display="none";
+            return true;
+        }else{
+            divCaducidad.style.display="flex";
+            resCaducidad.innerHTML="La tarjeta esta caducada"
+            return false;
+        }
+    }else{
+        divCaducidad.style.display="none";
+        return true;
+    }
     
 }
 

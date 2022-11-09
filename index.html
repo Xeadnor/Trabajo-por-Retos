@@ -7,11 +7,13 @@
     <title>Frikisetas</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
     <header id="headerLogo">
         <div id="log">
             <a href="index.html"><img id="logo" src="imagenes/FrikisetasLogo2.png" alt="logo"></a>
+            <a href="index.html"><img id="seta" src="imagenes/seta.png" alt="logo2"></a>
         </div>
+
         
         <div id="m1">
             <a href=""><img id="menu" src="imagenes/Menu.png" alt="menu"></a>
@@ -303,11 +305,15 @@
                     
                         <label for="owner" hidden>Propietario</label>
                         <input type="text" id="owner" placeholder="Propietario">
-                  
+                        <div id="r11">
+                            <p id="v11"></p>
+                        </div> 
                     
                         <label for="cvv" hidden>CVV</label>
                         <input type="text" id="cvv" placeholder="CVV" maxlength="3">
-                    
+                        <div id="r12">
+                            <p id="v12"></p>
+                        </div> 
                    
                         <label for="cardNumber" hidden>Número de tarjeta</label>
                         <input type="text" id="cardNumber" placeholder="Numero de tarjeta">
@@ -343,9 +349,12 @@
                         </select>
                     
                         </div>
+                        <div id="r13">
+                            <p id="v13"></p>
+                        </div> 
                         <div id="tarjetas">
                             
-                         <div id="dtarjeta1"><input type="radio" id="bTarjeta" name="tipotarjeta" value="visa">  <img src="imagenes/visa.png" id="visa" alt="imagen visa"></div>
+                         <div id="dtarjeta1"><input type="radio" id="bTarjeta" name="tipotarjeta" value="visa" checked>  <img src="imagenes/visa.png" id="visa" alt="imagen visa"></div>
                          <div id="dtarjeta2"><input type="radio" id="bTarjeta" name="tipotarjeta" value="mastercard">  <img src="imagenes/mastercard.png" id="mastercard" alt="imagen mastercard"></div>
                          <div id="dtarjeta3"><input type="radio" id="bTarjeta" name="tipotarjeta" value="amex"> <img src="imagenes/amex.png" id="amex" alt="imagen amex"></div>
                         </div>
@@ -364,7 +373,8 @@
                
 
 
-            <input id="boton" type="submit" value="JOIN!"> </br>
+            <input id="boton" type="submit" value="JOIN!" aria-label="Enviar cuestionario"> </br>
+            <input id="reset" type="reset" value="RESET" aria-label="Resetear datos del cuestionario"> 
             <div id="r10">
                 <p id="v10"></p>
             </div>

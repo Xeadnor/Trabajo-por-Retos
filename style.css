@@ -90,8 +90,10 @@ main{
 ::placeholder{
     color: black;
     font-family: 'Comfortaa';
-    font-size: 1.2vw;
+    font-size: 1.3vw;
+    display:flex;
     text-align: center;
+    align-items: center;
 }
 #np{
     display:flex;
@@ -102,7 +104,7 @@ main{
     margin-left:16.5vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -110,7 +112,7 @@ main{
     margin-left:4.7vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -123,7 +125,7 @@ main{
     margin-left:16.5vw;
     width:30vw;
     height:3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 
@@ -135,7 +137,7 @@ main{
 }
 #contenidos{
     margin-top:0.5vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     display:flex;
     justify-content: center;
     flex-direction: column;
@@ -150,8 +152,8 @@ main{
 
 }
 #fecha{
-    background-color:rgb(228, 228, 121);
-    color:gray;
+    background-color:rgb(176, 247, 129);
+    color:black;
     font-size: 1.4vw;
     font-weight: thin;
     border:0;
@@ -161,7 +163,7 @@ main{
     font-size: 1.4vw;
 }
 #sexo{
-    background:rgb(228, 228, 121);
+    background:rgb(176, 247, 129);
     width:1vw;
     height: 1vw;
     font-size: 2vw;
@@ -211,7 +213,7 @@ main{
     margin-left:16.5vw;
     width:14.5vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -219,7 +221,7 @@ main{
     margin-left: 0.3vw;
     width:14.5vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -228,7 +230,7 @@ main{
     margin-top:1vw;
     width:30vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -237,17 +239,17 @@ main{
     margin-top:1vw;
     width:12.3vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
-    color:gray;
+    color:black
 }
 #pais{
     font-family: 'Comfortaa';
     margin-top:1.1vw;
     margin-left:1.7vw;
     width:16vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     height: 3.3vw;
     text-align: center;
     font-size: 1.4vw;
@@ -273,12 +275,12 @@ main{
     
 }
 #owner, #cvv, #cardNumber{
-    font-family: 'PermanentMarker';
+    font-family: 'Comfortaa';
     margin-left: 16.5vw;
     margin-top: 1vw;
     width: 30vw;
     height: 3vw;
-    background-color: rgb(228, 228, 121);
+    background-color: rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
 }
@@ -299,23 +301,23 @@ main{
 
 }
 #mesCaducidad{
-    font-family: 'PermanentMarker';
+    font-family: 'Comfortaa';
     margin-left:16.5vw;
     margin-top:1vw;
     width:15.3vw;
     height: 3vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     text-align: center;
     font-size: 1.4vw;
-    color:gray;
+    color: black;
 }
 
 #ayoCaducidad{
-    font-family: 'PermanentMarker';
+    font-family: 'Comfortaa';
     margin-top:1vw;
     margin-left:1.7vw;
     width:13.7vw;
-    background-color:rgb(228, 228, 121);
+    background-color:rgb(176, 247, 129);
     height: 3.1vw;
     text-align: center;
     font-size: 1.2vw;
@@ -371,19 +373,38 @@ main{
 }
 
 #boton{
-    background-color:rgb(247, 251, 5);
+    background-color:rgb(176, 247, 129);
     border: none;
-    color: black;
+    color: black;   
     margin-left: 4vw;
     margin-top: 1vw;
     text-align: center;
     text-decoration: solid;
-    font-family: 'PermanentMarker';
-    font-size: 1.4vw;
+    font-family: 'SpaceMono-Bold';
+    font-weight:bold;
+    font-size: 1.7vw;
     border-radius: 12px;
     font-weight: bold;
-    width:7vw;
-    height: 4vw;
+    width:8vw;
+    height: 3.5vw;
+}
+#reset{
+    background-color:rgb(176, 247, 129);
+    border: none;
+    color: black;   
+    margin-left: 4vw;
+    margin-top: 1vw;
+    text-align: center;
+    text-decoration: solid;
+    font-family: 'SpaceMono-Bold';
+    font-weight:bold;
+    font-size: 1.7vw;
+    border-radius: 12px;
+    font-weight: bold;
+    width:8vw;
+    height: 3.5vw;
+    margin-left:13vw;
+
 }
 #camis{
     display:flex;
@@ -525,31 +546,55 @@ footer img{
     flex-direction: row;
     width: 100%;
 }
-#r1, #r2, #r3,#r4,#r5,#r6,#r7,#r8,#r10{
+#r1, #r2, #r3,#r4,#r5,#r6,#r7,#r8,#r10,#r11,#r12 ,#r13{
     display:none;
     width: 100%;
     flex-direction: column;
 
 }
-#v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9{
+#v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9,#v11,#v12,#v13{
     margin-top: 0.2vw;
     margin-bottom: 0.2vw;
     margin-left:16.5vw;
     color:red;
     font-size: 1.5vw;
 }
+
 #v10{
     margin-top: 0.2vw;
     margin-bottom: 0.2vw;
     margin-left:16.5vw;
     color:#00ff55;
-    font-size: 2vw;
+    font-size: 1.7vw;
 }
 #tarjeta{
     display:none;
 }
+#seta{
+    display:none;
+    width:5vw;
+    height:5vw;
+    justify-self: center;
+}
+#red{
+    color:red;
+}
 @media (max-width: 600px) {
-main{
+#header{
+    position: fixed;
+    display:flex;
+    justify-content:center;
+    flex-direction: row;
+    width:100%;
+    height: 13vw;
+    background-color:rgb(20, 20, 20);
+    color:aqua;
+    
+}
+#cabecera{
+    margin-top:6vw;
+}
+#main{
     display:flex;
     flex-direction: column;
 }
@@ -661,9 +706,18 @@ font-size:4vw;
     height: 3vw;
 }
 #boton{
-    width:15vw;
+    margin-top:2vw;
+    width:18vw;
     height: 6vw;
     font-size: 4vw;
+    margin-left:-3vw;
+}
+#reset{
+    margin-top:2vw;
+    width:18vw;
+    height: 6vw;
+    font-size: 4vw;
+    margin-left:23vw;
 }
 #descuentos{
     font-size: 2.7vw;
@@ -708,6 +762,9 @@ font-size:4vw;
 
 }
 #direccion1, #direccion2, #direccion3{
+        display:flex;
+        align-items: center;
+        text-align: center;
 
         width: 61.4vw;
         margin-left: 17vw;
@@ -728,7 +785,7 @@ font-size:4vw;
     margin-left: 0.5vw;
     width: 36vw;
     height: 9.1vw;
-    font-size: 1.4vw;
+    font-size: 3vw;
 }
 #owner, #cvv, #cardNumber{
     width: 61.4vw;
@@ -800,6 +857,19 @@ font-size:4vw;
 #v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9, #v10{
     font-size: 3vw;
     margin-left: 17.5vw;
+}
+#logo{
+    width:28vw;
+    height:16vw;
+    justify-self:center
+}
+::placeholder{
+    color: black;
+    font-family: 'Comfortaa';
+    font-size: 3vw;
+    display:flex;
+    text-align: center;
+    align-items: center;
 }
 }
 
