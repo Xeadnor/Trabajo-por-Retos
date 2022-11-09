@@ -147,16 +147,14 @@ function headL() {
             divLogo1.style.display="none";
             divLogo2.style.display="inline";
             divLogo2.style.marginLeft="15vw";
-            divLogo2.style.marginTop="2vw";
             divLogo2.style.width="20vw"
             divLogo2.style.height="13vw"
-            header.style.height="12vw";
+            header.style.height="8vw";
         }else{
             m1.style.display="flex";
             divLogo1.style.display="inline";
             divLogo2.style.display="none";
             divLogo1.style.marginLeft="38vw";
-            divLogo1.style.marginTop="2vw";
             divLogo1.style.width="28vw"
             divLogo1.style.height="16vw"
             header.style.height="13vw";
