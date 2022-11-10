@@ -53,6 +53,7 @@ Siguiendo e investigando las normas de accesibilidad WCAG 2.0 para formularios h
 <ul>
 <li>No limites el tiempo que el usuario dispone para completar un formulario, o dispón de un mecanismo para anular o ampliar el límite de tiempo (G5 - Sufficient [2.2.3 - AAA], G133 - Sufficient [2.2.1 - A], G198 - Sufficient [2.2.1 - A])<li>
 El usuario no tiene un tiempo de limite marcado para hacer el formulario.
+
 <li>Indica si un campo es obligatorio en el LABEL asociado al campo, por ejemplo mediante un texto "(obligatorio)" o mediante un asterisco explicando su significado al comienzo del formulario (H90 ? [3.3.2 - A])</li>
 Indicamos si un campo es obligatorio al explicar al inicio el formulario que el asterisco * Significa campo obligatorio, y para hacerlo aun mas accesible contamos con labels ocultas con el texto "(nombre de campo) obligatorio" para darle accesibilidad a los que usan lector de pagina
 <li>Proporciona descripciones textuales (no un mero asterisco o cambio de color) para identificar los campos obligatorios que no fueron completados (G83 - Sufficient [3.3.1 - A, 3.3.3- AA, 3.3.2 - A], F81)
