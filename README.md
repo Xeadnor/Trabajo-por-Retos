@@ -6,7 +6,7 @@ Grupo 1 formado por : Pablo Sainz, Marta Torres, Irene Merino, Joanna Mateo.
 Pagina web desde github pages: https://xeadnor.github.io/Trabajo-por-Retos/
 
 
-<h2></h2>
+<h2>Caracteristicas del formulario</h2>
 
 <ul>
 <li>Nombre y Apellidos (Obligatorio). Compuesto como máximo por dos palabras</li>
@@ -49,20 +49,28 @@ Por ultimo mencionar como caracteristica, que todos los campos se comprueban por
 
 
 <h2>Accesibilidad</h2>
+Siguiendo e investigando las normas de accesibilidad WCAG 2.0 para formularios hemos podido implementar todas las siguientes:
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>No limites el tiempo que el usuario dispone para completar un formulario, o dispón de un mecanismo para anular o ampliar el límite de tiempo (G5 - Sufficient [2.2.3 - AAA], G133 - Sufficient [2.2.1 - A], G198 - Sufficient [2.2.1 - A])<li>
+El usuario no tiene un tiempo de limite marcado para hacer el formulario.
+<li>Indica si un campo es obligatorio en el LABEL asociado al campo, por ejemplo mediante un texto "(obligatorio)" o mediante un asterisco explicando su significado al comienzo del formulario (H90 ? [3.3.2 - A])</li>
+Indicamos si un campo es obligatorio al explicar al inicio el formulario que el asterisco * Significa campo obligatorio, y para hacerlo aun mas accesible contamos con labels ocultas con el texto "(nombre de campo) obligatorio" para darle accesibilidad a los que usan lector de pagina
+<li>Proporciona descripciones textuales (no un mero asterisco o cambio de color) para identificar los campos obligatorios que no fueron completados (G83 - Sufficient [3.3.1 - A, 3.3.3- AA, 3.3.2 - A], F81)
+</li>
+ Aparte de indicarlo mediante el asterisco tambien proporcionamos un texto indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion.
+<li>Cuando se produzca un erro de validacion proporcionar una descripcion textual que describa la naturaleza del problema, valores permitidos, ejemplos correctos y localiza el campo que ha provocado el error(G84 - Sufficient [3.3.1 - A, 3.3.3- AA], G85 - Sufficient [3.3.1 - A, 3.3.3 - AA], G139 - Advisory [3.3.1 - A, 3.3.3 - AA], G177 - Sufficient [3.3.3- AA], G194 - Sufficient [3.3.5 - AAA])</li>
+Nuestro formulario cuenta con un gran sistema de avisos de validacion, en caso de que el usuario falle un campo, se mostrara un mensaje justo debajo de este con el nombre del campo, indicando cual es el campo erroneo, tambien habra indicaciones de como superar el campo y que valores tiene que introducir.
+<li>Debe ser evidente el campo que tiene el foco, por ejemplo el agente de usuario debe mostrar la barra vertical parpadeante en el punto de inserción de contenido de un campo de texto o puntear el contorno de los radios y checks (G149 - Sufficient [2.4.7 - AA])</li>
+Cuando un usuario esta sobre un campo, el borde de este se hace mas oscuro que el resto de la pagina para hacer un contraste y sea mas facil encontrarlo.
+<li>Cada control de formulario debe tener una etiqueta visible inmediatamente después en el caso de los radios y checks (G162 - Sufficient [3.3.2 - A], F86)</li>
+Cada radiobutton o checkbox contiene la informacion al lado, dejando claro que es lo que esta aceptado el usuario al marcar esa opcion
+<li>Utiliza elementos LABEL para asociar etiquetas a los controles del formulario. Asócialos de forma explícita (H44 - Sufficient [1.1.1 - A, 1.3.1 - A, 3.3.2 - A, 4.1.2 - A], F86)</li>
+Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con los criterios de accesibilidad, ya que hemos añadido labels en todos los campos estando estos asociados, les hemos dado un text-indent=-999em, haciendo que sea invisible en la pagina pero que el lector de paginas lo lea, en el caso como botones que no puede tener un texto integro, usamos el aria-label indicando la caracteristica de ese boton, como por ejemplo "Reset = boton que reinicia todos los campos al estado inicial"
+<li>Informa convenientemente de que el formulario se ha enviado con éxito (G199 - Advisory [3.3.1 - A, 3.3.2 -A, 3.3.4- AA, 3.3.6 -AAA])</li>
+Cuando el formulario es completado con exito se le muestra al usuario un mensaje facil de visualizar.
+<li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li>
+
 </ul>
-
-
 
 <h2>Test actualizados</h2>
 Para realizar los test automaticos nos hemos decidido por usar la herramienta Seleneium, para ellos hemos instalado en nuestro navegador la extension de Selenium IDE y creado un nuevo proyecto, lo hemos linkeado a nuestro repositorio donde esta nuestra pagina web con el formulario. Hemos realizado casos de prueba tanto para validaciones como para errores.
