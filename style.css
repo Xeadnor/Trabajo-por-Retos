@@ -601,16 +601,17 @@ footer img{
     color:red;
 }
 @media (max-width: 600px) {
-    #detalles{
+   
+#detalles{
         display: flex;
         flex-direction: column;
         margin-top:-25vw;
         margin-bottom: -5vw;
     }
-    #detalles img{
+#detalles img{
         width:20vw;
     }
-    footer{
+#footer{
         display:flex;
         flex-direction: row;
         align-items: center;
@@ -619,7 +620,7 @@ footer img{
         color:white;
         margin-top:-10vw;
     }
-    #logo{
+#logo{
         width:24vw;
         height:13vw;
         justify-self:center

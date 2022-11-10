@@ -165,7 +165,7 @@ function headL() {
             m1.style.display="flex";
             divLogo1.style.display="inline";
             divLogo2.style.display="none";
-            divLogo1.style.marginLeft="35vw";
+            divLogo1.style.marginLeft="38vw";
             divLogo1.style.width="20vw"
             divLogo1.style.height="10vw"
             header.style.height="9vw";
@@ -187,7 +187,7 @@ function headL() {
             m1.style.display="flex";
             divLogo1.style.display="inline";
             divLogo2.style.display="none";
-            divLogo1.style.marginLeft="38vw";
+            divLogo1.style.marginLeft="33.5vw";
             divLogo1.style.width="28vw"
             divLogo1.style.height="16vw"
             header.style.height="13vw";
