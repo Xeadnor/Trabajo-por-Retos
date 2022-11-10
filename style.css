@@ -490,7 +490,6 @@ font-family: 'Comfortaa';
     flex-direction: column;
     margin-top:-12vw;
     margin-bottom: -5vw;
-    background-color:rgb(20, 20, 20);
 }
 #detalles img{
     width:20vw;
@@ -602,6 +601,24 @@ footer img{
     color:red;
 }
 @media (max-width: 600px) {
+    #detalles{
+        display: flex;
+        flex-direction: column;
+        margin-top:-25vw;
+        margin-bottom: -5vw;
+    }
+    #detalles img{
+        width:20vw;
+    }
+    footer{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        width:100%;
+        height: 10vw;
+        color:white;
+        margin-top:-10vw;
+    }
     #logo{
         width:24vw;
         height:13vw;
