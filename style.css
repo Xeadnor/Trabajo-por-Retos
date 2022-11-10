@@ -58,6 +58,10 @@ main{
     width:16vw;
     height: 13vw;
 }
+#opt{
+    font-weight: bold;
+    font-size: 1.4vw;
+}
 #tcabecera{
     width:40%;
     font-size: 2.5vw;
