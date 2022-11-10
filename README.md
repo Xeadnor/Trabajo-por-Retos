@@ -9,10 +9,10 @@ Para realizar los test automaticos nos hemos decidido por usar la herramienta Se
 
 Para poder correr estos test es necesario tener Selenium IDE y descargar el archivo que contiene los test, se encuentra en el repositorio en SELENIUM_TEST/testAutomaticosJS.side
 
-Se habre la interfaz de selenium y se selecciona abrir un proyeccto existente. Seleccionamos nuestro archivo descargado.
+Se habre la interfaz de selenium y se selecciona abrir un proyeccto existente. Seleccionamos nuestro archivo descargado.<br>
 <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/8e35c927cdad7d71e49ad05df77af3fdcb313577/imagenes/selenium.png">
 
-Ya tendremos la interfaz con los diferentes test que podremos correr.
+Ya tendremos la interfaz con los diferentes test que podremos correr.<br>
 <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/4475897f72dce9dfc45e1d10ffc43a3dfa59ccb0/imagenes/test.png" style="width:700px">
 
 
