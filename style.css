@@ -488,8 +488,9 @@ font-family: 'Comfortaa';
 #detalles{
     display: flex;
     flex-direction: column;
-    margin-top:-2vw;
+    margin-top:-12vw;
     margin-bottom: -5vw;
+    background-color:rgb(20, 20, 20);
 }
 #detalles img{
     width:20vw;
@@ -501,6 +502,7 @@ footer{
     width:100%;
     height: 10vw;
     color:white;
+    margin-top:-5vw;
 }
 footer p{
     margin:0;
