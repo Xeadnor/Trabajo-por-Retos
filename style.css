@@ -524,7 +524,7 @@ footer p{
 }
 
 #logo{
-    width:20vw;
+    width:18vw;
     height:10vw;
     justify-self:center
 }
@@ -600,6 +600,12 @@ footer img{
     color:red;
 }
 @media (max-width: 600px) {
+    #logo{
+        width:24vw;
+        height:13vw;
+        justify-self:center
+    }
+
 #header{
     position: fixed;
     display:flex;

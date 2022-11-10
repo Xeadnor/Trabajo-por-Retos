@@ -72,11 +72,11 @@ const cardN = document.getElementById("cardNumber");
 const card = document.getElementsByName("tipotarjeta")
 const owner = document.getElementById("owner")
 const cvv = document.getElementById("cvv")
-dir1.addEventListener("keyup",comprobarDirPais);
-dir2.addEventListener("keyup",comprobarDirPais);
-dir3.addEventListener("keyup",comprobarDirPais);
-dir4.addEventListener("keyup",comprobarDirPais);
-pais.addEventListener("click",comprobarDirPais);
+dir1.addEventListener("change",comprobarDirPais);
+dir2.addEventListener("change",comprobarDirPais);
+dir3.addEventListener("change",comprobarDirPais);
+dir4.addEventListener("change",comprobarDirPais);
+pais.addEventListener("change",comprobarDirPais);
 //elementos para mostrar resultado de validaciones de la tarjeta
 const cn = document.getElementById("v9");
 const divO = document.getElementById("r11");
@@ -98,7 +98,7 @@ const divLogo1= document.getElementById("logo1");
 const divLogo2= document.getElementById("logo2"); 
 document.addEventListener("scroll",headL);
 
-
+nombre.addEventListener("change",comprobarNombre)
 
 //al enviar se coulte si estaba mostrado el mensaje de "El formulario se ha enviado correctamente"
 function env() {
@@ -131,6 +131,8 @@ function headL() {
             divLogo2.style.width="12vw"
             divLogo2.style.height="7vw"
             header.style.height="7vw";
+            seta.style.width="7vw"
+            seta.style.height="7vw"
            
         }else{//al volver arriba vuelve a aparecer el logo con las letras
             m1.style.display="flex";
@@ -149,7 +151,11 @@ function headL() {
             divLogo2.style.marginLeft="15vw";
             divLogo2.style.width="20vw"
             divLogo2.style.height="13vw"
-            header.style.height="8vw";
+            header.style.height="10vw";
+            seta.style.width="10vw"
+            seta.style.height="10vw"
+            // width:7vw;
+            // height:7vw;
         }else{
             m1.style.display="flex";
             divLogo1.style.display="inline";
