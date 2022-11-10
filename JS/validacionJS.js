@@ -98,7 +98,34 @@ const divLogo1= document.getElementById("logo1");
 const divLogo2= document.getElementById("logo2"); 
 document.addEventListener("scroll",headL);
 
-nombre.addEventListener("change",comprobarNombre)
+nombre.addEventListener("change",actualizar);
+apellidos.addEventListener("change",actualizar);
+mail.addEventListener("change",actualizar);
+contra.addEventListener("change",actualizar);
+apellidos.addEventListener("change",actualizar);
+apellidos.addEventListener("change",actualizar);
+psw1.addEventListener("change",actualizar)
+psw2.addEventListener("change",actualizar)
+fecha.addEventListener("change",actualizar)
+dir1.addEventListener("change",actualizar)
+dir3.addEventListener("change",actualizar)
+dir4.addEventListener("change",actualizar)
+owner.addEventListener("change",actualizar)
+cvv.addEventListener("change",actualizar)
+
+//Comprobamos que al salir de un campo el valor si se cumple la restriccion desaparezca el aviso
+function actualizar() {
+    comprobarNombreAct(nombre);
+    comprobarApellidoAct(apellidos);
+    comprobarMailAct(mail);
+    comprobarContrasennaAct(psw1,psw2)
+    comprobarFecha(fecha.value)
+    comprobarDir1(dir1)
+    comprobarDir3(dir3)
+    comprobarDir4(dir4)
+    comprobarowner(owner)
+    comprobarcvv(cvv)
+}
 
 //al enviar se coulte si estaba mostrado el mensaje de "El formulario se ha enviado correctamente"
 function env() {
@@ -218,7 +245,36 @@ function comprobarNombre(nombre){
     }
     if(number.test(nombre.value)){
         divNom.style.display="flex"
-        resNom.innerHTML="El nombre no admite numeros";
+        resNom.innerHTML="El nombre no admite números";
+        return false;
+    }
+    
+    if (cont<=1){
+        resNom.innerHTML= ""
+        return true;
+    }else{
+        divNom.style.display="flex";
+        resNom.innerHTML= "El nombre no puede tener más de 2 palabras";
+        return false;
+    }
+
+
+}
+function comprobarNombreAct(nombre){
+    const number = new RegExp('(?=.*[0-9])');
+    let nom= nombre.value;
+    let sinEspacios= nom.trim();// se eliminan espacios al inicioy final de la cadena
+     let cont=0;
+    for (let i = 0; i < sinEspacios.length; i++) {
+        const element = sinEspacios[i];
+      
+        if(element== " "){// cuanto numero de espacios en blanco
+            cont++;
+        }
+    }
+    if(number.test(nombre.value)){
+        divNom.style.display="flex"
+        resNom.innerHTML="El nombre no admite números";
         return false;
     }
     
@@ -254,7 +310,38 @@ function comprobarApellido(apellidos){
     }
     if(number.test(apellidos.value)){
         divNom.style.display="flex"
-        resAp.innerHTML="El apellido no admite numeros";
+        resAp.innerHTML="El apellido no admite números";
+        return false;
+    }
+    
+    if (cont<=1){
+        resAp.innerHTML= "";
+        return true;
+    }else{
+        divNom.style.display="flex";
+        resAp.innerHTML= "El apellido no puede tener más de 2 palabras";
+    
+        return false;
+        
+    }
+   
+
+}
+function comprobarApellidoAct(apellidos){
+    const number = new RegExp('(?=.*[0-9])');
+    let ap= apellidos.value;
+    let sinEspacios= ap.trim();
+    let cont=0;
+    for (let i = 0; i < sinEspacios.length; i++) {
+        const element = sinEspacios[i];
+      
+        if(element== " "){
+            cont++;
+        }
+    }
+    if(number.test(apellidos.value)){
+        divNom.style.display="flex"
+        resAp.innerHTML="El apellido no admite números";
         return false;
     }
     
@@ -284,6 +371,19 @@ function comprobarMail(mail) {
         resM.innerHTML= "";
         return true;
     }else{
+        divE.style.display="flex";
+        resM.innerHTML= "No es un email válido";
+        return false;
+    }
+    
+}
+
+function comprobarMailAct(mail) {
+    const email = new RegExp(/[a-z0-9_\-.]+[@]+[a-z]+\.[a-z]*/);
+    if(email.test(mail.value)){
+        resM.innerHTML= "";
+        return true;
+    }else if(mail.value.length > 0){
         divE.style.display="flex";
         resM.innerHTML= "No es un email válido";
         return false;
@@ -345,6 +445,62 @@ function comprobarContrasenna(psw1, psw2){
 return false;
 }
 
+function comprobarContrasennaAct(psw1, psw2){
+
+    const expReg= /^(?=.*\d)(?=.*[!-+<-@])(?=.*[A-Z])(?=.*[a-z]).{8,}$/;
+    const long= new RegExp('.{8,}');
+    const mayus= new RegExp('(?=.*[A-Z])');
+    const minusc= new RegExp('(?=.*[a-z])');
+    const numer=new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
+
+    if(psw1.value!=psw2.value){  
+        divC.style.display="flex";
+        resC.innerHTML= "Las contraseñas no coinciden";
+    }else{
+        divC.style.display="none";
+    }
+    if (expReg.test(psw1.value)) {
+        divC.style.display="none";
+        return true;
+    }else{
+       if(psw1.value.length >0){
+        if(!long.test(psw1.value)){
+            divC.style.display="flex";
+            resC.innerHTML= "La contraseña debe tener al menos 8 caracteres";
+            return false;
+        }else if(!mayus.test(psw1.value)){
+            divC.style.display="flex";
+            resC.innerHTML= "La contraseña debe incluir al menos una letra mayúscula";
+            return false;
+        }else if(!minusc.test(psw1.value)){
+            divC.style.display="flex";
+            resC.innerHTML= "La contraseña debe incluir al menos una letra minúscula";
+            return false;
+        }else if(!numer.test(psw1.value)){
+            divC.style.display="flex";
+            resC.innerHTML= "La contraseña debe incluir al menos un número";
+            return false;
+        }else if(!especial.test(psw1.value)){
+            divC.style.display="flex";
+            resC.innerHTML= "La contraseña debe incluir al menos un caracter especial";
+            
+            return false;
+        }else{
+            
+        }
+    }
+        
+    }
+    if(psw1.value!=psw2.value){  
+        divC.style.display="flex";
+        resC.innerHTML= "Las contraseñas no coinciden";
+    }else{
+        divC.style.display="none";
+    }
+return false;
+}
+
 function comprobarDirPais(){
     var date = new Date;
     var año = date.getFullYear();
@@ -368,19 +524,20 @@ function comprobarDir1(dir1) {
     const number = new RegExp('(?=.*[0-9])');
     if(dir1.value.length == 0){
         divDir1.style.display="none"
-        
         return true;
     }else{
         if(number.test(dir1.value)){
             divDir1.style.display="inline"
-            resDir1.innerHTML="No se admiten numeros";
+            resDir1.innerHTML="No se admiten números";
             return false;
             
          }else{
              divDir1.style.display="none"
+             return true;
          }
     }
 }
+
 function comprobarDir3(dir3) {
     const number = new RegExp('(?=.*[0-9])');
     if(dir3.value.length == 0){
@@ -390,11 +547,12 @@ function comprobarDir3(dir3) {
     }else{
         if(number.test(dir3.value)){
             divDir3.style.display="inline"
-            resDir3.innerHTML="No se admiten numeros";
+            resDir3.innerHTML="No se admiten números";
             return false;
             
          }else{
              divDir3.style.display="none"
+             return true;
          }
     }
 }
@@ -407,10 +565,11 @@ function comprobarDir4(dir4) {
     }else{
         if(number2.test(dir4.value) || dir4.value.length != 5){
             divDir4.style.display="inline"
-            resDir4.innerHTML="Solo se admiten 5 numeros";
+            resDir4.innerHTML="Sólo se admiten 5 números";
             return false;
          }else{
              divDir4.style.display="none"
+             return true;
          }
         }
      
@@ -422,13 +581,12 @@ function comprobarTarjeta(card,cardN) {
     var amexpRegEx = /^(?:3[47][0-9]{13})$/;
     if(cardN.value.length == 0){
         divCard.style.display="none"
-        
-        return true;
+        return true
     }
     if(card[0].checked){//comprbacion visa
         if(!visaRegEx.test(cardN.value)){
             divCard.style.display="inline"
-            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            cn.innerHTML="El número o el tipo de tarjeta no son correctos";
             return false;
         }else{
             divCard.style.display="none"
@@ -438,7 +596,7 @@ function comprobarTarjeta(card,cardN) {
     if(card[1].checked){//comprobacion mastercard
         if(!mastercardRegEx.test(cardN.value)){
             divCard.style.display="inline"
-            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            cn.innerHTML="El número o el tipo de tarjeta no son correctos";
             return false;
         }else{
             divCard.style.display="none"
@@ -448,7 +606,7 @@ function comprobarTarjeta(card,cardN) {
     if(card[2].checked){//comprobacion american express
         if(!amexpRegEx.test(cardN.value)){
             divCard.style.display="inline"
-            cn.innerHTML="El numero o el tipo de tarjeta no son correctos";
+            cn.innerHTML="El número o el tipo de tarjeta no son correctos";
             return false;
         }else{
             divCard.style.display="none"
@@ -464,11 +622,12 @@ function comprobarowner(owner) {
     }else{
         if(number.test(owner.value)){
             divO.style.display="inline"
-            resO.innerHTML="No se admiten numeros";
+            resO.innerHTML="No se admiten números";
             return false;
             
          }else{
              divO.style.display="none"
+             return true;
          }
     }
 }
@@ -481,10 +640,11 @@ function comprobarcvv(cvv) {
     }else{
         if(number2.test(cvv.value) || cvv.value.length != 3){
             divCVV.style.display="inline"
-            resCVV.innerHTML="Solo se admiten 3 numeros";
+            resCVV.innerHTML="Sólo se admiten 3 números";
             return false;
          }else{
              divCVV.style.display="none"
+             return true;
          }
         }
      
@@ -499,7 +659,7 @@ function comprobardatecard(ayo,mes) {
             return true;
         }else{
             divCaducidad.style.display="flex";
-            resCaducidad.innerHTML="La tarjeta esta caducada"
+            resCaducidad.innerHTML="La tarjeta está caducada"
             return false;
         }
     }else{
