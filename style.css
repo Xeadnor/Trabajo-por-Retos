@@ -719,6 +719,7 @@ footer img{
 }
 
 #nombre{
+    margin-left:16.3vw;
     margin-top:1vw;
 width: 25vw;
 height: 8vw;
@@ -727,20 +728,22 @@ font-size:4vw;
 
 #apellidos{
     margin-top:1vw;
-    margin-left: 10vw;
+    margin-left:9vw;
     width: 25vw;
     height: 8vw;
     font-size:4vw;
 }
 #mail{
     width: 61.4vw;
-    margin-left:-2.6vw;
+    margin-left: 16.5vw;
     margin-top: 2vw;
 height: 8vw;
 font-size:4vw;
 }
 #email{
-    justify-content: center;
+    display:flex;
+    margin-left: 0.9vw;
+    width: 100%;
 }
 #contenidos{
     width:31vw;
@@ -813,10 +816,12 @@ footer{
     margin-left: 0.9vw;
 }
 #contra{
-    justify-content: center;
+    width: 100%;
+    display:flex;
+    margin-left: 0.9vw;
 }
 #contrasena1{
-    margin-left:-3.7vw;
+    margin-left:16vw;
     margin-top:1vw;
 width: 25vw;
 height: 8vw;
@@ -824,7 +829,8 @@ font-size:4vw;
 }
 #contrasena2{
     margin-top: 1vw;
-    width: 34vw;
+    margin-left:0.5vw;
+    width: 33vw;
     height: 8vw;
     font-size: 3.4vw;
 
