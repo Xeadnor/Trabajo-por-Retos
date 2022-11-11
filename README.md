@@ -63,20 +63,22 @@ El usuario no tiene un tiempo límite marcado para completar el formulario.
 Indicamos si un campo es obligatorio al indicar al inicio del formulario que lo campos con asterisco "*" son campos obligatorios, y para hacerlo aún más accesible contamos con labels ocultas con el texto "(nombre de campo) obligatorio" para darle accesibilidad a los que usan lína braille (los lectores de página leerán tanto el label como el placeholder).
 <li>Proporciona descripciones textuales (no un mero asterisco o cambio de color) para identificar los campos obligatorios que no fueron completados (G83 - Sufficient [3.3.1 - A, 3.3.3- AA, 3.3.2 - A], F81)
 </li>
-Aparte de indicarlo mediante el asterisco también proporcionamos un texto (mensaje de error en la validación) indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion.
+Aparte de indicarlo mediante el asterisco también proporcionamos un texto (mensaje de error en la validación) indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion. (Se muestra en la imagen más abajo)
+<li>Cuando se produzca un error de validación proporcionar una descripción textual que describa la naturaleza del problema, valores permitidos, ejemplos correctos y localiza el campo que ha provocado el error(G84 - Sufficient [3.3.1 - A, 3.3.3- AA], G85 - Sufficient [3.3.1 - A, 3.3.3 - AA], G139 - Advisory [3.3.1 - A, 3.3.3 - AA], G177 - Sufficient [3.3.3- AA], G194 - Sufficient [3.3.5 - AAA])</li>
+Nuestro formulario cuenta con un gran sistema de avisos de validación, en caso de que el usuario falle un campo, se mostrará un mensaje justo debajo de éste con el nombre del campo, indicando cual es el campo erróneo, también habrá indicaciones de cómo superar el campo y que valores tiene que introducir.
+ <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/d54a548a580720f305ab06c2d88816ae1c7c3edd/imagenes/Errores_validacion.JPG" style="width: 400px"></img>
  
- 
- 
-<li>Cuando se produzca un erro de validacion proporcionar una descripcion textual que describa la naturaleza del problema, valores permitidos, ejemplos correctos y localiza el campo que ha provocado el error(G84 - Sufficient [3.3.1 - A, 3.3.3- AA], G85 - Sufficient [3.3.1 - A, 3.3.3 - AA], G139 - Advisory [3.3.1 - A, 3.3.3 - AA], G177 - Sufficient [3.3.3- AA], G194 - Sufficient [3.3.5 - AAA])</li>
-Nuestro formulario cuenta con un gran sistema de avisos de validacion, en caso de que el usuario falle un campo, se mostrara un mensaje justo debajo de este con el nombre del campo, indicando cual es el campo erroneo, tambien habra indicaciones de como superar el campo y que valores tiene que introducir.
 <li>Debe ser evidente el campo que tiene el foco, por ejemplo el agente de usuario debe mostrar la barra vertical parpadeante en el punto de inserción de contenido de un campo de texto o puntear el contorno de los radios y checks (G149 - Sufficient [2.4.7 - AA])</li>
-Cuando un usuario esta sobre un campo, el borde de este se hace mas oscuro que el resto de la pagina para hacer un contraste y sea mas facil encontrarlo.
+Cuando un usuario está sobre uno de los campos del formulario, el borde de éste se vuelve más oscuro que el resto de los campos de la página para hacer un contraste y sea más fácil localizar el campo actual.
 <li>Cada control de formulario debe tener una etiqueta visible inmediatamente después en el caso de los radios y checks (G162 - Sufficient [3.3.2 - A], F86)</li>
-Cada radiobutton o checkbox contiene la informacion al lado, dejando claro que es lo que esta aceptado el usuario al marcar esa opcion
+Cada radiobutton o checkbox contiene la información justo al lado, dejando claro que es lo que está aceptado o indicando el usuario al marcar esa opción.
 <li>Utiliza elementos LABEL para asociar etiquetas a los controles del formulario. Asócialos de forma explícita (H44 - Sufficient [1.1.1 - A, 1.3.1 - A, 3.3.2 - A, 4.1.2 - A], F86)</li>
-Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con los criterios de accesibilidad, ya que hemos añadido labels en todos los campos estando estos asociados, les hemos dado un text-indent=-999em, haciendo que sea invisible en la pagina pero que el lector de paginas lo lea, en el caso como botones que no puede tener un texto integro, usamos el aria-label indicando la caracteristica de ese botón, como por ejemplo "Reset = boton que reinicia todos los campos al estado inicial"
+Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con los criterios de accesibilidad, ya que hemos añadido labels asociados en todos los campos, les hemos dado un <b>text-indent=-999em</b>, haciendo que sea invisible en la página pero permitiendo que tanto el lector de páginas como la línea braille los puedan leer, en el caso de botones que no puede tener un texto íntegro, usamos el aria-label indicando la caracteristica de ese botón, como por ejemplo "Reset = botón que reinicia todos los campos al estado inicial".
 <li>Informa convenientemente de que el formulario se ha enviado con éxito (G199 - Advisory [3.3.1 - A, 3.3.2 -A, 3.3.4- AA, 3.3.6 -AAA])</li>
 Cuando el formulario es completado con exito se le muestra al usuario un mensaje facil de visualizar.
+
+
+
  
 <li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li> En el campo select de paises lo hemos separado por continentes para que sea más fácil localizar un país y por tanto más accesible.
 
