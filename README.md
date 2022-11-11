@@ -23,28 +23,33 @@ Pagina web desde github pages: https://xeadnor.github.io/Trabajo-por-Retos/
 
 Siguiendo lo que se nos pedia hemos realizado el formulario con ayuda del uso de JavaScript añadiendo ciertas consideraciones nuestras que iremos comentando:
 
-Respecto al nombre y apellido son dos input de tipo texto, los cuales son obligatorios a rellenar, no hemos querido usar el "required" debido  a que no cumple toda la accesibilidad posible, para ello usamos la comprobacion de si su length es mayor a 0, tambien comprobamos y validamos que no se escriban mas de dos palabras en cada campo, y que no se admitan números.
+Respecto al nombre y apellido son dos input de tipo texto, los cuales son obligatorios, no hemos querido usar el "required" debido  a que no cumple toda la accesibilidad posible, para ello usamos la comprobacion de si que length sea mayor 0, también comprobamos y validamos que no se escriban más de dos palabras en cada campo (ya que se pedía así), y que no se admitan números.
 
-El correo electronico es otro campo igual al anterior pero en este la expresion regular es mas compleja, volvemos a comprobrar que esta relleno mediante JavaScript comprobamos que tiene que haber un @, y que tanto detras como adelante de el haya texto, el cual esta comprobado que no sea mayusculas ni caracteres no permitidos en un correo, despues de esto tambien se comprueba que tiene que haber un "." y delante de el texto tambien. Asi comprobraremos el correo electronico correctamente.
+El correo electrónico es otro campo igual al anterior pero en este la expresión regular es más compleja, volvemos a comprobrar que está relleno mediante JavaScript comprobamos que tiene que haber un @, y que tanto detras como adelante de el haya texto, el cual está comprobado que no sea mayúsculas ni caracteres no permitidos en un correo, después de ésto también se comprueba que tiene que haber un "." y detrás de el texto también. Así comprobraremos el correo electrónico correctamente.
 
-La contraseña es un campo parecido tambien, primero comprobamos que tiene que estar rellena otra vez, y una vez es asi comprobamos que cumple con todas las indicaciones que se nos pide en el enunciado mediante el uso de expresiones regulares, ayudamos al usuario a saber que le falta por añadir a su contraseña comprobando varias expresiones regulares y devolviendo una cadena especial para cada caso. Una vez el usuario ha introducido una contraseña valida, se pasa a la segunda parte, comprobar que la contraseña que tiene que repetir es la misma a la primera.
+La contraseña es un campo parecido también, primero comprobamos que tiene que estar rellena, y una vez es así comprobamos que cumple con todas las indicaciones que se nos pide en el enunciado mediante el uso de expresiones regulares, ayudamos al usuario a saber que le falta por añadir a su contraseña comprobando parte por parte con expresiones regulares y devolviendo una cadena especial para cada caso (ej:"La contraseña debe incluir al menos un número"). Una vez el usuario ha introducido una contraseña válida, se pasa a la segunda parte, comprobar que la contraseña que tiene que repetir es la misma a la primera.
 
-<b>Todos los demas campos que mencionaremos ahora son opcionales, pero eso no quita que si se introduce uno, tiene que ser correcto con la forma en la que se le pida ya que cualquiera que de error no dejara enviar el formulario de registro</b>.
+<b>Todos los demás campos que mencionaremos ahora son opcionales, pero eso no quita que si se introduce uno, tiene que ser correcto con la forma en la que se le pida ya que cualquiera que de error no dejará enviar el formulario de registro</b>.
 
-En el campo de sexo hemos realizado un radiobutton con 3 posibles opciones, en el que dejamos como "checked" la 3 opcion, siendo una por default.
+En el campo de sexo hemos realizado un radiobutton con 3 posibles opciones, en el que dejamos como "checked" la 3 opción, siendo una por con vaolor default.
 
-Fecha de nacimiento es un campo de tipo date el cual como hemos dicho es opcional, pero si el usuario decide rellenarlo y colocar su fecha de nacimiento, este comprobara que sea mayor de edad, si no es asi se le indicara al usuario.
+Fecha de nacimiento es un campo de tipo date el cual como hemos dicho es opcional, pero si el usuario decide rellenarlo y colocar su fecha de nacimiento, este comprobará que sea mayor de edad, si no es así se le indicará al usuario.
 
-Direccion es un solo punto que hemos querido desglosar en 4, dos de ellos son "Direccion de la calle/via" y "Poblacion" los cuales admite una cadena de texto sin restriccion de caracteres, la unica restriccion es que no se admiten números en ellos. Hay un campo que es "Bloque,piso,portal" el cual admite todo tipo de caracteres. Por ultimo tenemos un campo que es "Codigo Postal" el cual como su nombre indica el usuario tendra que introducir 5 numeros, esto esta comprobado con maxlenght = 5, pero si se añaden menos, o algun caracter que no sea un numero, tambien saltara una aviso al usuario.
+Dirección es un sólo punto que hemos querido desglosar en 4, dos de ellos son "Direccion de la calle/via" y "Población" los cuales admite una cadena de texto con la restricción de que no se admiten números en ellos. Hay un campo que es "Bloque,piso,portal" el cuál admite todo tipo de caracteres. Por último tenemos un campo que es "Código Postal" el cuál como su nombre indica el usuario tendra que introducir 5 números, esto está comprobado con maxlenght = 5, pero si se añaden menos, o algún caracter que no sea un numérico, también saltará un aviso al usuario.
 
-Una vez rellenados todos los campos de direccion se mostrara la parte de formulario de la tarjeta. ( Esta comprobracion la hemos realizado de tal manera que da igual el orden en el que se rellenen los datos de direccion que siempre se mostrara en el ultimo el apartado de tarjeta, de misma manera que si se borra uno de estos apartados, los campos de tarjeta se volveran a ocultar).
-La tarjeta la hemos querido dar mas funcionabilidades de las pedidas ya que las veiamos necesarias y bastante enriquecedoras al formulario.
-Tenemos un campo "Propietario" el cual el usuario no puede usar numeros. Tenemos otro campo que es el "CVV" el cual es un campo que solo admite 3 caracteres y solo numericos, en el caso de introducir menos o alguna letra se le avisara al usuario. Tenemos un apartado de "fecha de caducidad" de la tarjeta, este campo tiene algo especial ya que lo hemos adaptado para que no haga falta actualizarlo con el paso del tiempo ya que se actualizan solos, aqui tenemos la validacion de que en el caso de que se seleccione como año de caducidad el mismo que el actual, el mes debe ser el mismo o mayor al actual, si no estaria caducada.
-Por ultimo tenemos dos campos que se complementan, el numero de tarjeta y el tipo de tarjeta, en el enunciado se pedia que se comprobara un numero de tarjeta y ya, pero hemos querido ir mas lejos y hemos hecho que se pueda elegir con un radiobutton entre 3 tipos de tarjeta, y dependiendo de cual se eliga se hace una comprobacion o otra sobre el numero de tarjeta escogido, cada una cuenta con su expresion regular.
+Una vez rellenados todos los campos de dirección se mostrará la parte de formulario de la tarjeta. ( Esta comprobración la hemos realizado de tal manera que da igual el orden en el que se rellenen los datos de dirección que siempre se mostrará al rellenar el último el apartado de tarjeta, de misma manera que si se borra uno de éstos apartados, los campos de tarjeta se volverán a ocultar).
+A la tarjeta la hemos querido dar mas comprobaciones de las pedidas ya que las veíamos necesarias y bastante enriquecedoras para el formulario.
+ Los cammpos son los siguientes:
+- Campo "Propietario" el cual no permite introducir numeros, saltará el error de que no es váido. 
+- Campo "CVV" el cual sólo admite 3 caracteres y sólo numéricos, en el caso de introducir menos números o alguna letra se le avisará al usuario. 
+- Campo "fecha de caducidad" de la tarjeta, éste campo tiene algo especial ya que lo hemos adaptado para que no haga falta actualizarlo con el paso del tiempo ya que se actualizan solos (calculando sobre el año actual cuatro años más que es el máximo que permiten las tarjetas de crédito/débito), aquí tenemos la validación de que en el caso de que se seleccione como año de caducidad el mismo que el actual, el mes debe ser el mismo o mayor al actual, si no saltará el aviso de que la tarjeta está caducada.
+- Por último tenemos dos campos que se complementan, el numero de tarjeta y el tipo de tarjeta, en el enunciado se pedia que se comprobara un numero de tarjeta y ya, pero hemos querido ir más lejos y hemos hecho que se pueda elegir con un radiobutton entre 3 tipos de tarjeta, y dependiendo de cuál se elija se hace una comprobación u otra sobre el numero de tarjeta escogido, cada una cuenta con su expresion regular. Es decir si se selecciona de tipo de tarjeta VISA, la comprobación del número de tarjeta se realiazará con una expresión regular propia para VISA.
 
-Por ultimo contamos con dos checkbox para las notificaciones y recepción de la revista digital, con una de ellas marcadas por default con "checked".
+Por último contamos con dos checkbox para las notificaciones y recepción de la revista digital, con una de ellas marcadas por defecto con "checked".
 
-Por ultimo mencionar como caracteristica, que todos los campos se comprueban por si mismos al introducirlos, es decir, si el usuario introduce un campo y este no es correcto con la forma que debe ser introducido se le avisa al usuario mediante un texto indicando como debe ser la forma correcta, si este lo modifica y es correcta la nueva forma el mensaje se borra. Una vez todos los campos que ha rellenado el usuario, minimo los obligatorios, estan validados, podremos darle al boton de "JOIN" que es el submit, el cual nos mostrara un texto indicando al usuario que este ha completado el registro, mensaje que se borrara si empezamos a crear un nuevo registro o pulsamos el boton de RESET, boton que nos permite vaciar todos los campos.
+Por último mencionar como característica, que todos los campos se comprueban por si mismos al introducirlos, es decir, si el usuario introduce un campo y éste no es correcto (no cumple la validación) se le avisa al usuario mediante un texto indicando cómo debe ser la forma correcta, si este lo modifica y es correcto el mensaje se borra. Una que el usuario ha rellenado todos los campos (mínimo los obligatorios) y están validados correctamente, podremos darle al boton de "JOIN" que es el submit, el cual nos mostrará un texto indicando al usuario que ha completado el registro (esto reseteará todos los campos de formulario), mensaje que se borrará si empezamos a crear un nuevo registro o pulsamos el boton de RESET.
+ 
+Hemos considerado necesario añadir a los campos de texto un límite con maxlenght para evitar que se puedan introducir textos demasiado largos y evitar así también la posibilidad de inyección SQL o de URLs que puedan dañar la base de datos y la aplicación.
 </ul>
 
 
@@ -52,13 +57,16 @@ Por ultimo mencionar como caracteristica, que todos los campos se comprueban por
 Siguiendo e investigando las normas de accesibilidad WCAG 2.0 para formularios hemos podido implementar todas las siguientes:
 <ul>
 <li>No limites el tiempo que el usuario dispone para completar un formulario, o dispón de un mecanismo para anular o ampliar el límite de tiempo (G5 - Sufficient [2.2.3 - AAA], G133 - Sufficient [2.2.1 - A], G198 - Sufficient [2.2.1 - A])<li>
-El usuario no tiene un tiempo de limite marcado para hacer el formulario.
+El usuario no tiene un tiempo límite marcado para completar el formulario.
 
 <li>Indica si un campo es obligatorio en el LABEL asociado al campo, por ejemplo mediante un texto "(obligatorio)" o mediante un asterisco explicando su significado al comienzo del formulario (H90 ? [3.3.2 - A])</li>
-Indicamos si un campo es obligatorio al explicar al inicio el formulario que el asterisco * Significa campo obligatorio, y para hacerlo aun mas accesible contamos con labels ocultas con el texto "(nombre de campo) obligatorio" para darle accesibilidad a los que usan lector de pagina
+Indicamos si un campo es obligatorio al indicar al inicio del formulario que lo campos con asterisco "*" son campos obligatorios, y para hacerlo aún más accesible contamos con labels ocultas con el texto "(nombre de campo) obligatorio" para darle accesibilidad a los que usan lína braille (los lectores de página leerán tanto el label como el placeholder).
 <li>Proporciona descripciones textuales (no un mero asterisco o cambio de color) para identificar los campos obligatorios que no fueron completados (G83 - Sufficient [3.3.1 - A, 3.3.3- AA, 3.3.2 - A], F81)
 </li>
- Aparte de indicarlo mediante el asterisco tambien proporcionamos un texto indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion.
+Aparte de indicarlo mediante el asterisco también proporcionamos un texto (mensaje de error en la validación) indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion.
+ 
+ 
+ 
 <li>Cuando se produzca un erro de validacion proporcionar una descripcion textual que describa la naturaleza del problema, valores permitidos, ejemplos correctos y localiza el campo que ha provocado el error(G84 - Sufficient [3.3.1 - A, 3.3.3- AA], G85 - Sufficient [3.3.1 - A, 3.3.3 - AA], G139 - Advisory [3.3.1 - A, 3.3.3 - AA], G177 - Sufficient [3.3.3- AA], G194 - Sufficient [3.3.5 - AAA])</li>
 Nuestro formulario cuenta con un gran sistema de avisos de validacion, en caso de que el usuario falle un campo, se mostrara un mensaje justo debajo de este con el nombre del campo, indicando cual es el campo erroneo, tambien habra indicaciones de como superar el campo y que valores tiene que introducir.
 <li>Debe ser evidente el campo que tiene el foco, por ejemplo el agente de usuario debe mostrar la barra vertical parpadeante en el punto de inserción de contenido de un campo de texto o puntear el contorno de los radios y checks (G149 - Sufficient [2.4.7 - AA])</li>
@@ -66,11 +74,13 @@ Cuando un usuario esta sobre un campo, el borde de este se hace mas oscuro que e
 <li>Cada control de formulario debe tener una etiqueta visible inmediatamente después en el caso de los radios y checks (G162 - Sufficient [3.3.2 - A], F86)</li>
 Cada radiobutton o checkbox contiene la informacion al lado, dejando claro que es lo que esta aceptado el usuario al marcar esa opcion
 <li>Utiliza elementos LABEL para asociar etiquetas a los controles del formulario. Asócialos de forma explícita (H44 - Sufficient [1.1.1 - A, 1.3.1 - A, 3.3.2 - A, 4.1.2 - A], F86)</li>
-Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con los criterios de accesibilidad, ya que hemos añadido labels en todos los campos estando estos asociados, les hemos dado un text-indent=-999em, haciendo que sea invisible en la pagina pero que el lector de paginas lo lea, en el caso como botones que no puede tener un texto integro, usamos el aria-label indicando la caracteristica de ese boton, como por ejemplo "Reset = boton que reinicia todos los campos al estado inicial"
+Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con los criterios de accesibilidad, ya que hemos añadido labels en todos los campos estando estos asociados, les hemos dado un text-indent=-999em, haciendo que sea invisible en la pagina pero que el lector de paginas lo lea, en el caso como botones que no puede tener un texto integro, usamos el aria-label indicando la caracteristica de ese botón, como por ejemplo "Reset = boton que reinicia todos los campos al estado inicial"
 <li>Informa convenientemente de que el formulario se ha enviado con éxito (G199 - Advisory [3.3.1 - A, 3.3.2 -A, 3.3.4- AA, 3.3.6 -AAA])</li>
 Cuando el formulario es completado con exito se le muestra al usuario un mensaje facil de visualizar.
-<li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li>
+ 
+<li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li> En el campo select de paises lo hemos separado por continentes para que sea más fácil localizar un país y por tanto más accesible.
 
+ 
 </ul>
 
 <h2>Test actualizados</h2>
@@ -78,7 +88,7 @@ Para realizar los test automaticos nos hemos decidido por usar la herramienta Se
 
 Para poder correr estos test es necesario tener Selenium IDE y descargar el archivo que contiene los test, se encuentra en el repositorio en SELENIUM_TEST/testAutomaticosJS.side
 
-Se habre la interfaz de selenium y se selecciona abrir un proyeccto existente. Seleccionamos nuestro archivo descargado.<br>
+Se habre la interfaz de selenium y se selecciona abrir un proyecto existente. Seleccionamos nuestro archivo descargado.<br>
 <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/8e35c927cdad7d71e49ad05df77af3fdcb313577/imagenes/selenium.png">
 
 Ya tendremos la interfaz con los diferentes test que podremos correr.<br>
