@@ -65,7 +65,7 @@ Indicamos si un campo es obligatorio al indicar al inicio del formulario que lo 
 </li>
 Aparte de indicarlo mediante el asterisco también proporcionamos un texto (mensaje de error en la validación) indicando que ese campo es obligatorio si se intenta enviar un formulario sin rellenar el campo en cuestion. (Se muestra en la imagen más abajo)
 <li>Cuando se produzca un error de validación proporcionar una descripción textual que describa la naturaleza del problema, valores permitidos, ejemplos correctos y localiza el campo que ha provocado el error(G84 - Sufficient [3.3.1 - A, 3.3.3- AA], G85 - Sufficient [3.3.1 - A, 3.3.3 - AA], G139 - Advisory [3.3.1 - A, 3.3.3 - AA], G177 - Sufficient [3.3.3- AA], G194 - Sufficient [3.3.5 - AAA])</li>
-Nuestro formulario cuenta con un gran sistema de avisos de validación, en caso de que el usuario falle un campo, se mostrará un mensaje justo debajo de éste con el nombre del campo, indicando cual es el campo erróneo, también habrá indicaciones de cómo superar el campo y que valores tiene que introducir.
+Nuestro formulario cuenta con un gran sistema de avisos de validación, en caso de que el usuario falle un campo, se mostrará un mensaje justo debajo de éste con el nombre del campo, indicando cual es el campo erróneo, también habrá indicaciones de cómo superar el campo y que valores tiene que introducir.</li>
  <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/d54a548a580720f305ab06c2d88816ae1c7c3edd/imagenes/Errores_validacion.JPG" style="width: 400px"></img>
  
 <li>Debe ser evidente el campo que tiene el foco, por ejemplo el agente de usuario debe mostrar la barra vertical parpadeante en el punto de inserción de contenido de un campo de texto o puntear el contorno de los radios y checks (G149 - Sufficient [2.4.7 - AA])</li>
@@ -77,16 +77,14 @@ Nos hemos enfocado mucho en este punto, nuestro formulario cumple gratamente con
 <li>Informa convenientemente de que el formulario se ha enviado con éxito (G199 - Advisory [3.3.1 - A, 3.3.2 -A, 3.3.4- AA, 3.3.6 -AAA])</li>
 Cuando el formulario es completado con exito se le muestra al usuario un mensaje facil de visualizar.
 
+<img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/b4ca3990c526d4cf724f02f3954b920dde34785a/imagenes/formularioCorrecto.JPG" style="width: 400px"></img> 
 
+<li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li> En el campo select de paises,hemos realizado una separación por continentes para que sea más fácil localizar un país y por tanto más accesible.
 
- 
-<li>Agrupa los OPTIONS de una SELECT mediante OPTGROUP (H85 - Sufficient [1.3.1 - A]</li> En el campo select de paises lo hemos separado por continentes para que sea más fácil localizar un país y por tanto más accesible.
-
- 
 </ul>
 
 <h2>Test actualizados</h2>
-Para realizar los test automaticos nos hemos decidido por usar la herramienta Seleneium, para ellos hemos instalado en nuestro navegador la extension de Selenium IDE y creado un nuevo proyecto, lo hemos linkeado a nuestro repositorio donde esta nuestra pagina web con el formulario. Hemos realizado casos de prueba tanto para validaciones como para errores.
+Para realizar los test automáticos nos hemos decidido por usar la herramienta Seleneium IDE, para ellos hemos instalado en nuestro navegador la extensión y creado un nuevo proyecto, lo hemos linkeado a nuestro repositorio donde está nuestra página web con el formulario. Hemos realizado casos de prueba tanto para validaciones como para errores.
 
 Para poder correr estos test es necesario tener Selenium IDE y descargar el archivo que contiene los test, se encuentra en el repositorio en SELENIUM_TEST/testAutomaticosJS.side
 
