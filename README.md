@@ -95,3 +95,7 @@ Ya tendremos la interfaz con los diferentes test que podremos correr.<br>
 <img src="https://github.com/Xeadnor/Trabajo-por-Retos/blob/4475897f72dce9dfc45e1d10ffc43a3dfa59ccb0/imagenes/test.png" style="width:700px">
 
 
+https://user-images.githubusercontent.com/104887544/201320504-99b51f92-fc0a-44da-b13f-6734666875fb.mp4
+
+
+
