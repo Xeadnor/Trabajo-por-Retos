@@ -653,7 +653,7 @@ function comprobarcvv(cvv) {
 function comprobardatecard(ayo,mes) {
     var date = new Date(); 
     var month = date.getMonth();
-    if(ayo.value == 22){
+    if(ayo.value == 0){
         if(month <= mes.value){
             divCaducidad.style.display="none";
             return true;
