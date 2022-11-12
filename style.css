@@ -31,7 +31,7 @@ header{
     flex-direction: row;
     width:100%;
     height: 9vw;
-    background-color:rgb(20, 20, 20);
+    background-color:rgb(31, 30, 30);
     color:aqua;
     
 }
@@ -41,7 +41,7 @@ main{
     flex-direction: row;
     flex-wrap: wrap;
     width:100%;
-    background-color:rgb(20, 20, 20);
+    background-color:rgb(31, 30, 30);
     
 }
 #cabecera{
@@ -49,14 +49,17 @@ main{
     width:100%;
     flex-direction: row;
     color:white;
+    align-items: flex-end;
 }
 #manchas{
     width:30%;
 
 }
 #mancha{
-    width:16vw;
-    height: 13vw;
+   
+    margin-top: 1.5vw;
+    width:26vw;
+    height: 18vw;
 }
 #opt{
     font-weight: bold;
@@ -664,7 +667,7 @@ footer img{
     margin-left: -4vw;
     width:60%;
     font-size: 4vw;
-    text-align: left;
+    text-align: center;
 }
 #camis{
     margin-top: 5vw;
