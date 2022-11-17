@@ -228,6 +228,7 @@ function comprobarFecha(fecha) {
 }
 function comprobarNombre(nombre){
     const number = new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
     let nom= nombre.value;
     let sinEspacios= nom.trim();// se eliminan espacios al inicioy final de la cadena
      let cont=0;
@@ -248,6 +249,12 @@ function comprobarNombre(nombre){
         resNom.innerHTML="El nombre no admite números";
         return false;
     }
+    if(especial.test(nombre.value)){
+        divNom.style.display="flex"
+        resNom.innerHTML="El nombre no admite caracteres especiales";
+        return false;
+        
+    }
     
     if (cont<=1){
         resNom.innerHTML= ""
@@ -262,6 +269,7 @@ function comprobarNombre(nombre){
 }
 function comprobarNombreAct(nombre){
     const number = new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
     let nom= nombre.value;
     let sinEspacios= nom.trim();// se eliminan espacios al inicioy final de la cadena
      let cont=0;
@@ -276,6 +284,12 @@ function comprobarNombreAct(nombre){
         divNom.style.display="flex"
         resNom.innerHTML="El nombre no admite números";
         return false;
+    }
+    if(especial.test(nombre.value)){
+        divNom.style.display="flex"
+        resNom.innerHTML="El nombre no admite caracteres especiales";
+        return false;
+        
     }
     
     if (cont<=1){
@@ -292,6 +306,8 @@ function comprobarNombreAct(nombre){
 
 function comprobarApellido(apellidos){
     const number = new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
+    
     let ap= apellidos.value;
     let sinEspacios= ap.trim();
     let cont=0;
@@ -313,7 +329,11 @@ function comprobarApellido(apellidos){
         resAp.innerHTML="El apellido no admite números";
         return false;
     }
-    
+    if(especial.test(apellidos.value)){
+        divNom.style.display="flex"
+        resAp.innerHTML="El apellido no admite caracteres especiales";
+        return false;
+    }
     if (cont<=1){
         resAp.innerHTML= "";
         return true;
@@ -329,6 +349,7 @@ function comprobarApellido(apellidos){
 }
 function comprobarApellidoAct(apellidos){
     const number = new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
     let ap= apellidos.value;
     let sinEspacios= ap.trim();
     let cont=0;
@@ -343,6 +364,12 @@ function comprobarApellidoAct(apellidos){
         divNom.style.display="flex"
         resAp.innerHTML="El apellido no admite números";
         return false;
+    }
+    if(especial.test(apellidos.value)){
+        divNom.style.display="flex"
+        resAp.innerHTML="El apellido no admite caracteres especiales";
+        return false;
+        
     }
     
     if (cont<=1){
@@ -361,7 +388,7 @@ function comprobarApellidoAct(apellidos){
 
 function comprobarMail(mail) {
     
-    const email = new RegExp(/[a-z0-9_\-.]+[@]+[a-z]+\.[a-z]*/);
+    const email = new RegExp(/[a-z0-9_\-.]+[@][a-z]+\.[a-z]*/);
     if(mail.value.length == 0){
         divE.style.display="flex";
         resM.innerHTML= "El e-mail es un campo obligatorio";
@@ -616,6 +643,7 @@ function comprobarTarjeta(card,cardN) {
 }
 function comprobarowner(owner) {
     const number = new RegExp('(?=.*[0-9])');
+    const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
     if(owner.value.length == 0){
         divO.style.display="none"
         return true;
@@ -625,12 +653,19 @@ function comprobarowner(owner) {
             resO.innerHTML="No se admiten números";
             return false;
             
+         }else if(especial.test(owner.value)){
+            divO.style.display="flex"
+            resO.innerHTML="El nombre de propietario no admite caracteres especiales";
+            return false;
+             
          }else{
-             divO.style.display="none"
+            divO.style.display="none"
              return true;
          }
+         
+            
+        }
     }
-}
 function comprobarcvv(cvv) {
     const number2 = new RegExp("(?=.*[^0-9])");
     if(cvv.value.length == 0){
