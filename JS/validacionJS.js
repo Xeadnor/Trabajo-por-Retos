@@ -387,8 +387,7 @@ function comprobarApellidoAct(apellidos){
 }
 
 function comprobarMail(mail) {
-    
-    const email = new RegExp(/(^[a-z]+)[@]([a-z]+)\.([a-z]+)/);
+    const email = new RegExp(/(^[a-z]+)[@]([a-z]+)\.([a-z]{2,}$)/);
     if(mail.value.length == 0){
         divE.style.display="flex";
         resM.innerHTML= "El e-mail es un campo obligatorio";
@@ -406,7 +405,7 @@ function comprobarMail(mail) {
 }
 
 function comprobarMailAct(mail) {
-    const email = new RegExp(/(^[a-z]+)[@]([a-z]+)\.([a-z]+)/);
+    const email = new RegExp(/(^[a-z]+)[@]([a-z]+)\.([a-z]{2,}$)/);
     if(email.test(mail.value)){
         resM.innerHTML= "";
         return true;
