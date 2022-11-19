@@ -207,6 +207,7 @@ if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
     document.getElementById('form').reset() // al enviarse el formulario se vacian los campos
     return true;
 }
+    nombre.focus();
   return false;
 }
 
