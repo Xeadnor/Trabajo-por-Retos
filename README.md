@@ -84,7 +84,7 @@ Cuando el formulario es completado con exito se le muestra al usuario un mensaje
 </ul>
 
 <h2>Test actualizados</h2>
-Para realizar los test automáticos nos hemos decidido por usar la herramienta Seleneium IDE, para ellos hemos instalado en nuestro navegador la extensión y creado un nuevo proyecto, lo hemos linkeado a nuestro repositorio donde está nuestra página web con el formulario. Hemos realizado casos de prueba tanto para validaciones como para errores.
+Para realizar los test automáticos nos hemos decidido por usar la herramienta Selenium IDE, para ellos hemos instalado en nuestro navegador la extensión y creado un nuevo proyecto, lo hemos linkeado a nuestro repositorio donde está nuestra página web con el formulario. Hemos realizado casos de prueba tanto para validaciones como para errores.
 
 Para poder correr estos test es necesario tener Selenium IDE y descargar el archivo que contiene los test, se encuentra en el repositorio en SELENIUM_TEST/testAutomaticosJS.side
 
