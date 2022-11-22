@@ -96,6 +96,7 @@ const body = document.getElementById("body");
 const seta= document.getElementById("seta"); 
 const divLogo1= document.getElementById("logo1"); 
 const divLogo2= document.getElementById("logo2"); 
+const menu = document.getElementById("menu");
 document.addEventListener("scroll",headL);
 
 nombre.addEventListener("change",actualizar);
@@ -160,15 +161,18 @@ function headL() {
             header.style.height="7vw";
             seta.style.width="7vw"
             seta.style.height="7vw"
+            
            
         }else{//al volver arriba vuelve a aparecer el logo con las letras
             m1.style.display="flex";
             divLogo1.style.display="inline";
             divLogo2.style.display="none";
-            divLogo1.style.marginLeft="38vw";
+            divLogo1.style.marginLeft="38.5vw";
             divLogo1.style.width="20vw"
             divLogo1.style.height="10vw"
             header.style.height="9vw";
+            menu.style.marginLeft="-11vw"
+    
         }
     }else if(window.innerWidth < 600){
         if(window.scrollY > 50){
