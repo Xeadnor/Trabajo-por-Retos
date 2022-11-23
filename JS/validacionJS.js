@@ -208,8 +208,45 @@ if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
 &comprobarowner(owner)&comprobarcvv(cvv)&comprobardatecard(ayoC,mesC)){
     divSubmit.style.display="flex";
     resultSubmit.innerHTML="El formulario se ha enviado correctamente";
-    document.getElementById('form').reset() // al enviarse el formulario se vacian los campos
+    document.getElementById("form").reset() // al enviarse el formulario se vacian los campos
     return true;
+}
+if(!comprobarNombre(nombre)){
+    nombre.focus();
+    return false;
+}else if(!comprobarApellido(apellidos)){
+    apellidos.focus();
+    return false;
+}else if(!comprobarMail(mail)){
+    mail.focus();
+    return false;
+}else if(!comprobarFecha(fecha.value)){
+    fecha.focus();
+    return false;
+}else if(!comprobarContrasenna(psw1,psw2)){
+    psw1.focus();
+    return false;
+}else if(!comprobarDir1(dir1)){
+    dir1.focus();
+    return false;
+}else if(!comprobarDir3(dir3)){
+    dir3.focus();
+    return false;
+}else if(!comprobarDir3(dir4)){
+    dir4.focus();
+    return false;
+}else if(!comprobarTarjeta(card,cardN)){
+    cardN.focus();
+    return false;
+}else if(!comprobarowner(owner)){
+    owner.focus();
+    return false;
+}else if(!comprobarcvv(cvv)){
+    cvv.focus();
+    return false;
+}else if(!comprobardatecard(ayoC,mesC)){
+    mesC.focus();
+    return false;
 }
   return false;
 }
@@ -484,15 +521,16 @@ function comprobarContrasennaAct(psw1, psw2){
     const numer=new RegExp('(?=.*[0-9])');
     const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
 
-    if(psw1.value!=psw2.value){  
-        divC.style.display="flex";
-        resC.innerHTML= "Las contraseñas no coinciden";
-    }else{
-        divC.style.display="none";
-    }
     if (expReg.test(psw1.value)) {
-        divC.style.display="none";
-        return true;
+        if(psw1.value!=psw2.value){  
+            divC.style.display="flex";
+            resC.innerHTML= "Las contraseñas no coinciden";
+            return false;
+        }else{
+            divC.style.display="none";
+            return true;
+        }
+       
     }else{
        if(psw1.value.length >0){
         if(!long.test(psw1.value)){
