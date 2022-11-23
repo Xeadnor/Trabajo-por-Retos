@@ -232,7 +232,7 @@ if(!comprobarNombre(nombre)){
 }else if(!comprobarDir3(dir3)){
     dir3.focus();
     return false;
-}else if(!comprobarDir3(dir4)){
+}else if(!comprobarDir4(dir4)){
     dir4.focus();
     return false;
 }else if(!comprobarTarjeta(card,cardN)){
