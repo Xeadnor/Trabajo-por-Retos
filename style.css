@@ -1,949 +1,176 @@
-@font-face {
-    font-family: 'PermanentMarker';
-    src: url('FONTS/PermanentMarker-Regular.ttf');
+*{
+  cursor: url("imagenes/cursordefault.png"), auto;
+}
+a,input,button,.btn{
+  cursor: url("imagenes/cursorpointer.png"), auto;
+}
+.pointer{
+  cursor: url("imagenes/cursorpointer.png"), auto;
+}
+#divlogreg{
+  cursor: url("imagenes/cursorpointer.png"), auto;
 }
 @font-face {
-    font-family: 'Orbitron';
-    src: url('FONTS/Orbitron-VariableFont_wght.ttf');
+  font-family: 'PressStart2P';
+  src: url('FONTS/PressStart2P-Regular.ttf');
 }
-@font-face {
-    font-family: 'SpaceMono-Bold';
-    src: url('FONTS/SpaceMono-Bold.ttf');
+
+.justify-end {
+  margin-left: auto;
 }
-@font-face {
-    font-family: 'Comfortaa';
-    src: url('FONTS/Comfortaa-Bold.ttf');
+#Cust{
+  font-family: 'PressStart2P';
+  font-size: 11px;
+  height: 20px;
+  margin-top:15px;
+  align-items: center;
+}
+#usuario{
+    border: 2px solid #5ed3e2;
+    border-radius: 20px; 
+
+}
+#password{
+border: 4px solid #3061b0;
+border-radius: 20px; 
+}
+#reenviador{
+  font-size: 1.5vw;
+}
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fccb90;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  }
+  
+#body{
+  justify-content: center;
+}  
+#divlogin{
+display:none;
+top:25%;
+position: fixed;
+}
+
+#he{
+  background: linear-gradient(320deg, #ec7762,#ffef78,#04d47e,#04a3d4);
 }
 
 
-
-body{
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
-    padding: 0;
-    margin:0;
-}
-header{
-    position: fixed;
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    width:100%;
-    height: 9vw;
-    background-color:rgb(33, 33, 33);
-    color:aqua;
-    
-}
-main{
-    margin-top:9vw;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width:100%;
-    background-color:rgb(33, 33, 33);
-    
-}
-#cabecera{
-    display:flex;
-    width:100%;
-    flex-direction: row;
-    color:white;
-    align-items: flex-end;
-}
-#manchas{
-    width:30%;
-
-}
-#mancha{
-   
-    margin-top: 1.5vw;
-    width:26vw;
-    height: 18vw;
-}
-#opt{
-    font-weight: bold;
-    font-size: 1.4vw;
-}
-#tcabecera{
-    width:40%;
-    font-size: 2.5vw;
-    text-align: center;
-    font-family: 'PermanentMarker';
-    text-shadow: 0.1em 0.1em 0.1em rgb(70, 69, 69);
-}
-#fgancho{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color:rgb(251, 226, 5);
-    font-family: 'PermanentMarker';
-    text-shadow: 0.2em 0.2em 0.2em grey;
-}
-#fgancho p{
-    margin-top:20px;
-    font-size: 3.5vw;
+/* Style the header with a grey background and some padding */
+.header {
+overflow: hidden;
+background-color: #f1f1f1;
+padding: 20px 10px;
 }
 
-#formulario{
-    display: flex;
-    width: 60%;
-    flex-direction: row;
-    color: white;
-}
-#form{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-input{
-    width:max-content;
-    margin: 0.8vw;
-    border: 2px solid #65aa8f;
-    border-radius: 4px;
-}
-select, textarea{
-    width:max-content;
-    margin: 0.2vw;
-    border: 2px solid #65aa8f;
-    border-radius: 4px;
-}
-::placeholder{
-    color: black;
-    font-family: 'Comfortaa';
-    font-size: 1.3vw;
-    display:flex;
-    text-align: center;
-    align-items: center;
-}
-#np{
-    display:flex;
-    width:100%;
-}
-#nombre{
-
-    margin-left:16.5vw;
-    width:12.3vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#apellidos{
-    margin-left:4.7vw;
-    width:12.3vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#email{
-    display:flex;
-    width: 100%;
-    margin-top:0.5vw;
-}
-#mail{
-    margin-left:16.5vw;
-    width:31vw;
-    height:3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-
-}
-#date{
-    width:100%;
-    display: flex;
-    
-}
-#contenidos{
-    margin-top:0.5vw;
-    background-color:rgb(198, 240, 170);
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 1.4vw;
-    height: 10vw;
-    color:black;
-    width:14vw;
-    text-align: center;
-    margin-left: 16.5vw;
-    font-family: 'Comfortaa';
-    border: 2px solid #65aa8f;
-    border-radius: 4px;
-
-}
-#fecha{
-    background-color:rgb(198, 240, 170);
-    color:black;
-    font-size: 1.4vw;
-    font-weight: thin;
-    border:0;
-    margin-left:1vw;
-
-}
-#tsexo{
-    font-size: 1.4vw;
-}
-optgroup{
-    text-align: left;
-    font-size:1.7vw;
-    font-weight: bold;
-}
-option{
-    font-size:1.4vw;
-    font-weight: 500;
-    text-align: center;
-}
-#sexo{
-    background:rgb(198, 240, 170);
-    width:1vw;
-    height: 1vw;
-    font-size: 2vw;
-}
-#identidad{
-    width: 100%;
-    font-size: 2vw;
-    text-align: center;
-    height: 1vw;
-    font-family: 'PermanentMarker';
-}
-#opcionsexo{
-    margin-top:0.5vw;
-    font-family: 'Comfortaa';
-    font-size:1.4vw;
-    align-items: center;
-    margin-left: 2.5vw;
-    
-}
-#obligatorio{
-    width: 100%;
-    font-size: 1.8vw;
-    text-align: center;
-    height: 1vw;
-    font-family: 'Comfortaa';
-}
-#contra{
-    display:flex;
-    width: 100%;
-    
-}
-#hn{
-    width:80%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Comfortaa';
-}
-#hn2{
-    width:100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Comfortaa';
+/* Style the header links */
+.header a {
+float: left;
+color: black;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+font-size: 18px;
+line-height: 25px;
+border-radius: 4px;
 }
 
-
-#contrasena1{
-    margin-left:16.5vw;
-    width:14.5vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#contrasena2{
-    margin-left: 0.3vw;
-    width:14.5vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#direccion1, #direccion2,  #direccion3{
-    margin-left: 16.5vw;
-    margin-top:1vw;
-    width:31vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#direccion4{
-    margin-left:16.5vw;
-    margin-top:1vw;
-    width:12.3vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-    color:black
-}
-#pais{
-    font-family: 'Comfortaa';
-    margin-top:1.1vw;
-    margin-left:1.7vw;
-    width:16vw;
-    background-color:rgb(198, 240, 170);
-    height: 3.3vw;
-    text-align: center;
-    font-size: 1.4vw;
-}
-#adress{
-    display:flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
-#adress2{
-    display:flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-#tarjeta{
-    display:flex;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
-#owner, #cvv, #cardNumber{
-    font-family: 'Comfortaa';
-    margin-left: 16.5vw;
-    margin-top: 1vw;
-    width: 30vw;
-    height: 3vw;
-    background-color: rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-}
-#h2t{
-    margin-left: 16.5vw;
-    font-size: 1.3vw;
-}
-#lt{
-    width:100%;
-    margin-top:0.8vw;
-    margin-left: 16.5vw;
-    font-size: 1.3vw;
-    margin-bottom: 0;
-}
-#fCaducidad{
-    width:100%;
-    display:flex;
-
-}
-#mesCaducidad{
-    font-family: 'Comfortaa';
-    margin-left:16.5vw;
-    margin-top:1vw;
-    width:15.3vw;
-    height: 3vw;
-    background-color:rgb(198, 240, 170);
-    text-align: center;
-    font-size: 1.4vw;
-    color: black;
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+font-size: 25px;
+font-weight: bold;
 }
 
-#ayoCaducidad{
-    font-family: 'Comfortaa';
-    margin-top:1vw;
-    margin-left:1.7vw;
-    width:13.7vw;
-    background-color:rgb(198, 240, 170);
-    height: 3.1vw;
-    text-align: center;
-    font-size: 1.2vw;
-}
-#bTarjeta{
-    width: 1.5vw;
-    height: 1.5vw;
-}
-
-#tarjetas{
-    display:flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top:1vw;
-}
-#tarjetas img{
-    width:7vw;
-}
-#dtarjeta2, #dtarjeta3 {
-    display: flex;
-    align-items: center;
-    margin-left: 1.5vw;
-}
-#dtarjeta1{
-    display: flex;
-    align-items: center;
-    margin-left : 4vw;
-}
-#noti{
-    margin-top: 1vw;
-    margin-left: 16.5vw;
-    display: flex;
-    width: 100%;
-    font-size: 1.35vw;
-    align-items: center;
-}
-#letter{
-    margin-top:1vw;
-    margin-left:16.5vw;
-    display:flex;
-    width:100%;
-    font-size:1.35vw;
-    align-items: center;
-}
-#notificaciones{
-    width:1.2vw;
-    height:1.2vw;
-}
-#newsletter{
-    width:1.2vw;
-    height:1.2vw;
-}
-
-#boton{
-    background-color:rgb(251, 226, 5);
-    border: none;
-    color: black;   
-    margin-left: 4vw;
-    margin-top: 1vw;
-    text-align: center;
-    text-decoration: solid;
-    font-family: 'SpaceMono-Bold';
-    font-weight:bold;
-    font-size: 1.7vw;
-    border-radius: 12px;
-    font-weight: bold;
-    width:8vw;
-    height: 3.5vw;
-}
-#reset{
-    background-color:rgb(251, 226, 5);
-    border: none;
-    color: black;   
-    margin-left: 4vw;
-    margin-top: 1vw;
-    text-align: center;
-    text-decoration: solid;
-    font-family: 'SpaceMono-Bold';
-    font-weight:bold;
-    font-size: 1.7vw;
-    border-radius: 12px;
-    font-weight: bold;
-    width:8vw;
-    height: 3.5vw;
-    margin-left:13vw;
-
-}
-#camis{
-    display:flex;
-    flex-direction: column;
-    width:29%;
-}
-#orgullo{
-    margin-left: -8vw;
-    margin-top: -4vw;
-    width:43vw;
-    height: 32vw;
-}
-#camisetas{
-    width:30vw;
-    height: 25vw;
-    margin-top: -4vw;
-
-}
-
-#descuentos{
-    width:50%;
-    color:rgb(116, 211, 211);
-    text-align: center;
-    justify-content: center;
-    font-size:2.1vw;
-    margin-left: 20vw;
-    font-family: 'Orbitron';
-}
-
-
-
-#diy{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-#cdiy{
-width:20vw;
-height:20vw;
-margin-left:30vw;
-}
-#tdiy{
-    width: 15%;
-color:white;
-text-align: left;
-font-size: 2vw;
-font-family: 'Comfortaa';
-}
-
-#custom{
-    margin-left:8vw;
-    margin-top:-5vw;
-    width:10vw;
-    height: 5vw;
-    transform: rotate(339deg);
-}
-#opiniones{
-    display: flex;
-    justify-content: center;
-    width:100%;
-}
-#opinion{
-    width:60vw;
-
-}
-#detalles{
-    display: flex;
-    flex-direction: column;
-    margin-top:-12vw;
-    margin-bottom: -5vw;
-}
-#detalles img{
-    width:20vw;
-}
-footer{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    width:100%;
-    height: 10vw;
-    color:white;
-    margin-top:-5vw;
-}
-footer p{
-    margin:0;
-    padding:0;
-}
-
-
-#dtfooter{
-    display:flex;
-    justify-content: right;
-    flex-wrap: wrap;
-    width: 40%;
-    margin-right: 5vw;
-    font-size: 1.7vw;
-    font-family: 'Orbitron';
-}
-#RRSS{
-    display:flex;
-    justify-content: right;
-    width: 60%;
+#font-nav{
+  font-size:15px;
 }
 
 #logo{
-    width:18vw;
-    height:10vw;
-    justify-self:center
-}
-#df2{
-    width:10vw;
-    height: 7vw;
-}
-footer img{
-    width:4vw;
-    height: 4vw;
-    margin-right: 1.3vw;
-}
-#tw{
-    width:3.5vw;
-    height: 3.5vw;
-    
-}
-#menu{
-    width: 9vw;
-    height: 8vw;
-}
-#m1{
-    width:40%;
-    display:flex;
-    justify-content: right;
-    align-items: center;
-}
-#logo1{
-    width:55%;
-    display:flex;
-    justify-content: right;
-}
-#posicion{
-    display:flex;
-    flex-direction: row;
-    width: 100%;
-}
-#r1, #r2, #r3,#r4,#r5,#r6,#r7,#r8,#r10,#r11,#r12 ,#r13{
-    display:none;
-    width: 100%;
-    flex-direction: column;
-
-}
-#v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9,#v11,#v12,#v13{
-    margin-top: 0.2vw;
-    margin-bottom: 0.2vw;
-    margin-left:16.5vw;
-    color:red;
-    font-size: 1.5vw;
+    width: 20vw;
 }
 
-#v10{
-    margin-top: 0.2vw;
-    margin-bottom: 0.2vw;
-    margin-left:16.5vw;
-    color:#00ff55;
-    font-size: 1.7vw;
+/* Change the background color on mouse-over */
+.header a:hover {
+background-color: #ddd;
+color: black;
 }
-#tarjeta{
-    display:none;
-}
-#logo2{
-    display: none;
-    width:55%;
-    justify-content: right;
-}
-#seta{
-    width:7vw;
-    height:7vw;
-    justify-self: center;
-}
-#red{
-    color:red;
-}
-@media (max-width: 600px) {
-   
-#detalles{
-        display: flex;
-        flex-direction: column;
-        margin-top:-25vw;
-        margin-bottom: -5vw;
-    }
-#detalles img{
-        width:20vw;
-    }
-#footer{
-        display:flex;
-        flex-direction: row;
-        align-items: center;
-        width:100%;
-        height: 10vw;
-        color:white;
-        margin-top:-10vw;
-    }
-#logo{
-        width:24vw;
-        height:13vw;
-        justify-self:center
-    }
 
-#header{
-    position: fixed;
-    display:flex;
-    justify-content:center;
-    flex-direction: row;
-    width:100%;
-    height: 13vw;
-    background-color:rgb(20, 20, 20);
-    color:aqua;
-    
+/* Style the active/current link*/
+.header a.active {
+background-color: dodgerblue;
+color: white;
 }
-#cabecera{
-    margin-top:6vw;
+
+/* Float the link section to the right */
+.header-right {
+float: right;
 }
-#main{
+#formlogin{
     display:flex;
     flex-direction: column;
-}
-
-#tcabecera{
-    margin-left: -4vw;
-    width:60%;
-    font-size: 4vw;
-    text-align: center;
-}
-#camis{
-    margin-top: 5vw;
-}
-#orgullo{
-    display:none;
-}
-#camisetas{
-    width: 50vw;
-    height: 35vw;
-    margin-left: -10vw;
-    margin-top:-3vw;
-}
-#formulario{
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-}
-#diy{
-    display:flex;
-    flex-direction: column;
     align-items: center;
 }
-#cdiy{
-    margin-left:0vw;
-    }
 
-#tdiy{
-    width:40%;
-    font-size:2.5vw;
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
-#custom{
-    margin-top:-10vw;
-    margin-left:8vw;
-    width: 18vw;
-}
-#fgancho p {
-    margin-top:0;
-    font-size: 5vw;
-}
-#posicion{
-    flex-direction: column-reverse;
-    align-items: center;
-    margin-top:-7vw;
-}
-#identidad{
-    font-size: 3.5vw;
-}
-#obligatorio{
-    font-size:3.5vw;
+.dropdown-toggle::after {
+  display: inline-block !important; 
+  width: 12px !important;
+  margin-left: 0.255em !important;
+  vertical-align: 0.255em !important;
+  content: "" !important;
+  border-top: 0.5em solid !important;
+  border-right: 0.4em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.4em solid transparent !important;
 }
 
-#nombre{
-    margin-left:16.3vw;
-    margin-top:1vw;
-width: 25vw;
-height: 8vw;
-font-size:4vw;
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 }
 
-#apellidos{
-    margin-top:1vw;
-    margin-left:9vw;
-    width: 25vw;
-    height: 8vw;
-    font-size:4vw;
-}
-#mail{
-    width: 61.4vw;
-    margin-left: 16.5vw;
-    margin-top: 2vw;
-height: 8vw;
-font-size:4vw;
-}
-#email{
-    display:flex;
-    margin-left: 0.9vw;
-    width: 100%;
-}
-#contenidos{
-    width:31vw;
-    height: 19vw;
-    font-size:4vw;
-    margin-top:2.5vw;
-    margin-left:9.5vw;
-    border: 2px solid #65aa8f;
-    border-radius: 4px;
-}
-#fecha{
-    font-size:3.2vw;
-}
-#date{
-    margin-left:7.8vw;
-}
-#opcionsexo{
-    margin-top:2.5vw;
-    font-size:3vw;
-    margin-right: 20vw;
-}
-#tsexo{
-    font-size: 3vw;
-}
-#sexo{
-    font-size: 5vw;
-    width: 3vw;
-    height: 3vw;
-}
-#boton{
-    margin-top:2vw;
-    width:18vw;
-    height: 6vw;
-    font-size: 4vw;
-    margin-left:-3vw;
-}
-#reset{
-    margin-top:2vw;
-    width:18vw;
-    height: 6vw;
-    font-size: 4vw;
-    margin-left:23vw;
-}
-#descuentos{
-    font-size: 2.7vw;
-    width: 70%;
-    margin-left:15vw;
-}
-#cdiy{
-    width:25vw;
-    height: 25vw;
-}
-#opinion{
-    width: 80vw;
-}
-#detalles img{
-    width:35vw;
-}
-#RRSS img{
-    width: 7vw;
-    height: 7vw;
-}
-footer{
-    margin-top: -4vw;
-}
-#dtfooter{
-    font-size: 2.5vw;
-}
-#np{
-    margin-left: 0.9vw;
-}
-#contra{
-    width: 100%;
-    display:flex;
-    margin-left: 0.9vw;
-}
-#contrasena1{
-    margin-left:16vw;
-    margin-top:1vw;
-width: 25vw;
-height: 8vw;
-font-size:4vw;
-}
-#contrasena2{
-    margin-top: 1vw;
-    margin-left:0.5vw;
-    width: 33vw;
-    height: 8vw;
-    font-size: 3.4vw;
-
-}
-#direccion1, #direccion2, #direccion3{
-        display:flex;
-        align-items: center;
-        text-align: center;
-
-        width: 61.4vw;
-        margin-left: 17vw;
-        margin-top: 2vw;
-        height: 8vw;
-        font-size: 4vw;
-
-}
-#direccion4{
-    margin-top: 1vw;
-    margin-left: 16.6vw;
-    width: 25vw;
-    height: 8vw;
-    font-size: 3.6vw;
-}
-#pais{
-    margin-top: 1.2vw;
-    margin-left: 0.5vw;
-    width: 36vw;
-    height: 9.1vw;
-    font-size: 3vw;
-}
-#owner, #cvv, #cardNumber{
-    width: 61.4vw;
-    margin-left: 16.5vw;
-    margin-top: 2vw;
-    height: 8vw;
-    font-size: 4vw;
-}
-#h2t{
-    font-size:3.6vw;
-    margin-left:17vw;
-    margin-bottom: 0;
-    margin-top: 1vw;
-}
-#lt{
-    font-size:3.3vw;
-    margin-left:17vw;
-    margin-top: 1.5vw;
-}
-#mesCaducidad{
-    margin-top: 1vw;
-    width: 28vw;
-    height: 8vw;
-    font-size: 4vw;
-
-}
-#ayoCaducidad{
-    margin-top: 1vw;
-    width: 28vw;
-    height: 8vw;
-    font-size: 3.5vw;
-    margin-left: 7vw;
-
-}
-#bTarjeta{
-    width: 3.5vw;
-    height: 3.5vw;
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
 }
 
-#tarjetas img{
- width: 15vw;
-}
-#dtarjeta1{
- margin-left: -5vw;
-}
-#noti{
-    margin-top:2vw;
-    font-size: 3.5vw;
-}
-#notificaciones{
-    width: 3vw;
-    height: 3vw;
-}
-#newsletter{
-    width: 3.5vw;
-    height: 3.5vw;
-}
-#letter{
-    font-size: 3.5vw;
-    margin-top:2vw;
-
-}
-#hn{
-    width:70%;
-}
-#hn2{
-    width:100%
-}
-#v1,#v2,#v3,#v4,#v5,#v6,#v7,#v8,#v9, #v10{
-    font-size: 3vw;
-    margin-left: 17.5vw;
+.text-small {
+  font-size: 85%;
 }
 
-::placeholder{
-    color: black;
-    font-family: 'Comfortaa';
-    font-size: 3vw;
-    display:flex;
-    text-align: center;
-    align-items: center;
-}
+.dropdown-toggle {
+  outline: 0;
 }
 
 
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+.header a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+.header-right {
+  float: none;
+}
+}

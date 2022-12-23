@@ -11,7 +11,7 @@ boton.addEventListener("click", validar);
 const divSubmit=document.getElementById("r10")
 const resultSubmit= document.getElementById("v10");
 
-
+const nick = document.getElementById("nick");
 //elementos para la validacion de nombre y apellidos
 const nombre = document.getElementById("nombre");
 const apellidos = document.getElementById("apellidos");
@@ -38,11 +38,7 @@ const resC= document.getElementById("v5");
 
 //elementos para la validacion de la fecha nacimiento
 const fecha = document.getElementById("fecha");
-const ty = document.getElementById("ty");
-const t1 = document.getElementById("t1");
-const t2 = document.getElementById("t2");
-const t3 = document.getElementById("t3");
-const t4 = document.getElementById("t4");
+
 //elementos para mostrar resultado validacion fecha nacimiento
 const divD = document.getElementById("r3");
 const resF= document.getElementById("v4");
@@ -62,6 +58,8 @@ const divCard = document.getElementById("r8")
 const resDir1 = document.getElementById("v6");
 const resDir3 = document.getElementById("v7");
 const resDir4 = document.getElementById("v8");
+const divNick = document.getElementById("r20");
+const resNick = document.getElementById("v20");
 
 
 //elementos para validar la tarjeta
@@ -92,14 +90,32 @@ const divCaducidad = document.getElementById("r13");
 const header = document.getElementById("headerLogo");
 const m1 = document.getElementById("m1");
 const logo = document.getElementById("logo"); 
-const body = document.getElementById("body"); 
+const body1 = document.getElementById("body"); 
 const seta= document.getElementById("seta"); 
 const divLogo1= document.getElementById("logo1"); 
 const divLogo2= document.getElementById("logo2"); 
 const menu = document.getElementById("menu");
 document.addEventListener("scroll",headL);
 
+const ty = document.getElementById("ty");
+const t1 = document.getElementById("t1");
+const t2 = document.getElementById("t2");
+const t3 = document.getElementById("t3");
+const t4 = document.getElementById("t4");
+
+window.addEventListener("load", function() {
+    var date = new Date;
+    var año = date.getFullYear();
+    ty.innerHTML = año;
+    t1.innerHTML = año+1;
+    t2.innerHTML = año+2;
+    t3.innerHTML = año+3;
+    t4.innerHTML = año+4;
+  });
+
+
 nombre.addEventListener("change",actualizar);
+nick.addEventListener("change",actualizar);
 apellidos.addEventListener("change",actualizar);
 mail.addEventListener("change",actualizar);
 contra.addEventListener("change",actualizar);
@@ -117,6 +133,7 @@ cvv.addEventListener("change",actualizar)
 //Comprobamos que al salir de un campo el valor si se cumple la restriccion desaparezca el aviso
 function actualizar() {
     comprobarNombreAct(nombre);
+    comprobarNickAct(nick);
     comprobarApellidoAct(apellidos);
     comprobarMailAct(mail);
     comprobarContrasennaAct(psw1,psw2)
@@ -201,17 +218,24 @@ function headL() {
 
 //al enviar
 function validar(e){
-    e.preventDefault();
 
-if(comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
+if(comprobarNick(nick)&comprobarNombre(nombre)&comprobarApellido(apellidos)&comprobarMail(mail)
 &comprobarFecha(fecha.value)&comprobarContrasenna(psw1,psw2)&comprobarDir1(dir1)&comprobarDir3(dir3)&comprobarDir4(dir4)&comprobarTarjeta(card,cardN)
 &comprobarowner(owner)&comprobarcvv(cvv)&comprobardatecard(ayoC,mesC)){
     divSubmit.style.display="flex";
+     setTimeout(correcto, 500);
+function correcto() {
     resultSubmit.innerHTML="El formulario se ha enviado correctamente";
-    document.getElementById("form").reset() // al enviarse el formulario se vacian los campos
-    return true;
 }
-if(!comprobarNombre(nombre)){
+    
+
+}else{
+    e.preventDefault();
+}
+if(!comprobarNick(nick)){
+    nick.focus();
+    return false;
+}else if(!comprobarNombre(nombre)){
     nombre.focus();
     return false;
 }else if(!comprobarApellido(apellidos)){
@@ -267,6 +291,62 @@ function comprobarFecha(fecha) {
    }
     
 }
+function comprobarNick(nick){
+    let ni= nick.value;
+    let sinEspacios= ni.trim();// se eliminan espacios al inicioy final de la cadena
+     let cont=0;
+     if(ni.length == 0){
+        divNick.style.display="flex";
+        resNick.innerHTML= "El nick es un campo obligatorio";
+        return false;
+    }
+    for (let i = 0; i < sinEspacios.length; i++) {
+        const element = sinEspacios[i];
+      
+        if(element== " "){// cuanto numero de espacios en blanco
+            cont++;
+        }
+    } 
+    if (cont<=0){
+        resNick.innerHTML= ""
+        return true;
+    }else{
+        divNick.style.display="flex";
+        resNick.innerHTML= "El nick no puede tener más de 1 palabra";
+        return false;
+    }
+
+
+}
+function comprobarNickAct(nick){
+    let ni= nick.value;
+    let sinEspacios= ni.trim();// se eliminan espacios al inicioy final de la cadena
+     let cont=0;
+     if(ni.length == 0){
+        divNick.style.display="flex";
+        resNick.innerHTML= "El nick es un campo obligatorio";
+        return false;
+    }
+    for (let i = 0; i < sinEspacios.length; i++) {
+        const element = sinEspacios[i];
+      
+        if(element== " "){// cuanto numero de espacios en blanco
+            cont++;
+        }
+    }
+    if (cont<=0){
+        resNick.innerHTML= ""
+        return true;
+    }else{
+        divNick.style.display="flex";
+        resNick.innerHTML= "El nick no puede tener más de 1 palabra";
+        return false;
+    }
+
+
+}
+
+
 function comprobarNombre(nombre){
     const number = new RegExp('(?=.*[0-9])');
     const especial= new RegExp('(?=.*[*^!-+<-@]+).*');
@@ -569,15 +649,7 @@ function comprobarContrasennaAct(psw1, psw2){
 return false;
 }
 
-function comprobarDirPais(){
-    var date = new Date;
-    var año = date.getFullYear();
-    ty.innerHTML = año;
-    t1.innerHTML = año+1;
-    t2.innerHTML = año+2;
-    t3.innerHTML = año+3;
-    t4.innerHTML = año+4;
-    
+function comprobarDirPais(){    
     if(dir1.value.length!=0&&dir2.value.length!=0&&dir3.value.length!=0&&dir4.value.length!=0&&pais.value!="Ninguno"){
             tarjeta.style.display="inline";//mostrar campos de tarjeta
     }else{
@@ -651,7 +723,7 @@ function comprobarTarjeta(card,cardN) {
         divCard.style.display="none"
         return true
     }
-    if(card[0].checked){//comprbacion visa
+    if(card[0].checked){
         if(!visaRegEx.test(cardN.value)){
             divCard.style.display="inline"
             cn.innerHTML="El número o el tipo de tarjeta no son correctos";
@@ -745,6 +817,41 @@ function comprobardatecard(ayo,mes) {
 }
 
 
+//Proceso para elegir una imagen
+var divavatar = document.getElementById("avatar");
+var divimagenes = document.getElementById("imagenes");
+var avatarP = document.getElementById("avatarP");
+divavatar.addEventListener("click",pickimage);
 
+
+
+function pickimage() {
+    divimagenes.style.display="block";
+    
+    const myTimeout = setTimeout(activateListener, 100);
+
+function activateListener() {
+    body1.addEventListener("click",cerrarImg);  
+} 
+}
+function choose(element) {
+    divimagenes.style.display="none";
+    var nombre = element.getAttribute("value")
+    document.getElementById("nombreImg").value = nombre;
+    fotoUsuario = nombre;
+    var url = "url('imagenes/" + nombre + "')";
+    divavatar.style.backgroundImage = url;
+    divavatar.style.backgroundSize= "100% 100%";
+    avatarP.innerHTML = "";
+
+}
+
+function cerrarImg() {
+    if(divimagenes.style.display = "block"){
+        divimagenes.style.display = "none";
+    }
+    body1.removeEventListener("click",cerrarImg);
+    
+}
 
 
