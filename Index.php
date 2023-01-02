@@ -21,7 +21,13 @@ if($method == "GET"){
         if($_GET["logout"] =="0"){
             require_once("VISTA/home.php");
         }
-}
+    }
+    if(isset($_GET["perfil"])){
+        if($_GET["perfil"] =="1"){
+            header("Location:Index.php?perfil=1");
+            require_once("VISTA/perfil.php");
+        }
+    }
 }
 
 if($method == "POST"){    
