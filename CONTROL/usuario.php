@@ -45,11 +45,11 @@ class Usuario {
     }
 
     public function setEmail($email): void {
-        $this->correo = $email;
+        $this->email = $email;
     }
 
     public function setidTipo($idTipo): void {
-        $this->tipo = $idTipo;
+        $this->idTipo = $idTipo;
     }
 
     public function setImagen($imagen): void {
