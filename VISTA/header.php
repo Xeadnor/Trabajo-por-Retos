@@ -23,7 +23,7 @@
 
 <div class="container-fluid justify-content-center" style="z-index:3;" id="divlogin">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-4" id="ti">
+      <div class="col-8 col-md-8 col-lg-6 col-xl-4" id="ti">
         <div class="card bg-dark text-white" style="border-radius: 2rem;" id="ti">
           <div class="card-body p-3 text-center">
 
